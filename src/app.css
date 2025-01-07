@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@plugin "./lib/css/index";
+
+body {
+  font-family: "Mallanna", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --color-background: oklch(100% 0 0);
+  --color-content: oklch(20.38% 0.0132 233.32);
+  --color-base-100: oklch(100% 0 0);
+  --color-base-100-content: oklch(20.38% 0.0132 233.32);
+  --color-base-200: oklch(0.967 0.001 286.375);
+  --color-base-200-content: oklch(0.274 0.006 286.033);
+  --color-base-300: oklch(0.92 0.004 286.32);
+  --color-base-300-content: oklch(0.37 0.013 285.805);
+  --color-base-400: oklch(0.871 0.006 286.286);
+  --color-base-400-content: oklch(0.442 0.017 285.786);
+  --color-primary: oklch(0.623 0.214 259.815);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(0.627 0.265 303.9);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-default: oklch(0.871 0.006 286.286);
+  --color-default-content: oklch(0% 0 0);
+  --color-info: oklch(0.715 0.143 215.221);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: oklch(0.723 0.219 149.579);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(0.795 0.184 86.047);
+  --color-warning-content: oklch(0 0 0);
+  --color-danger: oklch(0.637 0.237 25.331);
+  --color-danger-content: oklch(100% 0 0);
+  --color-border: oklch(0.872 0.01 258.338);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: oklch(100% 0 0);
+    --color-content: oklch(20.38% 0.0132 233.32);
+    --color-base-100: oklch(96.74% 0.0013 286.38);
+    --color-base-100-content: oklch(27.39% 0.0055 286.03);
+    --color-base-200: oklch(91.97% 0.004 286.32);
+    --color-base-200-content: oklch(37.03% 0.0119 285.81);
+    --color-base-300: oklch(0 0 0 / 0.2);
+    --color-base-300-content: oklch(20.38% 0.0132 233.32);
+    --color-base-400: oklch(0 0 0 / 0.2);
+    --color-base-400-content: oklch(20.38% 0.0132 233.32);
+    --color-primary: oklch(0.522 0.177 255.837);
+    --color-primary-content: oklch(1 0 263.283);
+    --color-secondary: oklch(0.62 0.156 53.457);
+    --color-secondary-content: oklch(1 0 263.283);
+    --color-default: oklch(0.773 0.037 247.026);
+    --color-default-content: oklch(0 0 0);
+    --color-info: oklch(0.672 0.182 149.164);
+    --color-info-content: oklch(1 0 263.283);
+    --color-success: oklch(0.672 0.182 149.164);
+    --color-success-content: oklch(1 0 263.283);
+    --color-warning: oklch(0.676 0.131 92.948);
+    --color-warning-content: oklch(0 0 0);
+    --color-danger: oklch(0.493 0.186 27.487);
+    --color-danger-content: oklch(1 0 263.283);
+    --color-border: oklch(0 0 0 / 0.1);
+  }
+}
