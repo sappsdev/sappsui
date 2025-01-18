@@ -2,6 +2,7 @@ const card = {
   ".card": {
     "@apply flex flex-col relative overflow-hidden": {},
     "@h-auto outline-none text-content box-border bg-base-100": {},
+    "@apply shadow-medium rounded-lg": {},
   },
   ".card-header": {
     "@apply flex p-3 z-10 w-full justify-start items-center": {},

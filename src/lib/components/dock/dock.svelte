@@ -12,7 +12,5 @@
 </script>
 
 <div class={cn("dock-root", className)}>
-  <div class="dock-wrapper">
-    {@render children?.()}
-  </div>
+  {@render children?.()}
 </div>

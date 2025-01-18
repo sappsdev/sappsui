@@ -5,11 +5,13 @@
   type Props = {
     children?: Snippet;
     class?: string;
+    placement?: "left" | "right";
   };
-  const { children, class: className }: Props = $props();
+  const { children, class: className, placement = "left" }: Props = $props();
   const layout: any = getContext("layout");
   const handleClick = () => {
-    layout.drawerLeftOpen = !layout.drawerLeftOpen;
+    if (placement === "right") layout.drawerRightOpen = !layout.drawerRightOpen;
+    else layout.drawerLeftOpen = !layout.drawerLeftOpen;
   };
 </script>
 

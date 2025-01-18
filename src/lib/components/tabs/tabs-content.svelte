@@ -14,7 +14,7 @@
 </script>
 
 {#if tabs.active === key}
-  <div in:fade class={cn("tabs-content", className)}>
+  <div in:fade class={cn("tabs-content", tabs?.placement, className)}>
     {@render children?.()}
   </div>
 {/if}

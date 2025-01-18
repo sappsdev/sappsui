@@ -5,10 +5,11 @@
   type Props = {
     children?: Snippet;
     class?: string;
+    href?: string;
   };
-  const { children, class: className }: Props = $props();
+  const { children, class: className, href }: Props = $props();
 </script>
 
-<div class={cn("navbar-item", className)}>
+<a class={cn("navbar-item", className)} {href}>
   {@render children?.()}
-</div>
+</a>

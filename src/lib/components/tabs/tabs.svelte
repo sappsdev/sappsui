@@ -7,15 +7,30 @@
     children?: Snippet;
     class?: string;
     active?: string;
+    placement?: "top" | "bottom" | "start" | "end";
+    size?: "sm" | "md" | "lg";
+    variant?: "solid" | "underlined" | "bordered" | "light";
+    radius?: "sm" | "md" | "lg";
   };
-  const { children, class: className, active }: Props = $props();
+  const {
+    children,
+    class: className,
+    active,
+    placement = "top",
+    size = "md",
+    variant = "solid",
+    radius = "md",
+  }: Props = $props();
   let tabs = $state({
     active: active || null,
+    placement,
+    size,
+    variant,
   });
 
   setContext("tabs", tabs);
 </script>
 
-<div class={cn("tabs", className)}>
+<div class={cn("tabs-root", placement, className)}>
   {@render children?.()}
 </div>

@@ -17,6 +17,18 @@
   };
 </script>
 
-<button class={cn("tabs-item", className)} onclick={handleClick}>
-  {@render children?.()}
+<button
+  class={cn(
+    "tab group",
+    tabs?.variant,
+    tabs?.size,
+    tabs?.active === key && "active",
+    className
+  )}
+  onclick={handleClick}
+>
+  <div class={cn("tab-cursor", tabs?.variant)}></div>
+  <div class={cn("tab-content")}>
+    {@render children?.()}
+  </div>
 </button>

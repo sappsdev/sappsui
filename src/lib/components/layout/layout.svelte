@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { LayoutState } from "$lib/types.js";
   import cn from "$lib/utils/classNames.js";
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
@@ -34,17 +35,19 @@
     drawerFull = false,
   }: Props = $props();
 
-  let layout = $state({
+  let layout = $state<LayoutState>({
     drawerLeftOpen: false,
     drawerRightOpen: false,
     railedLeft: false,
     railedRight: false,
-    barsHidde: false,
+    barsHidden: false,
+    breakpoint: "",
+    scrollY: 0,
   });
   setContext("layout", layout);
 
-  let hNavbarActive = $derived(layout.barsHidde ? "0px" : `${hNavbar}px`);
-  let hDockActive = $derived(layout.barsHidde ? "0px" : `${hDock}px`);
+  let hNavbarActive = $derived(layout.barsHidden ? "0px" : `${hNavbar}px`);
+  let hDockActive = $derived(layout.barsHidden ? "0px" : `${hDock}px`);
   let navbarInsetActive = $derived(navbarInset ? hNavbarActive : "0px");
   let dockInsetActive = $derived(hDock > 0 ? hDockActive : "0px");
   let wSidebarLeftActive = $derived(
@@ -54,32 +57,58 @@
     layout.railedRight ? `${wrRail}px` : `${wrSidebar}px`
   );
 
+  const checkBreakpoint = () => {
+    const width = window.innerWidth;
+
+    layout.breakpoint =
+      width >= 1536
+        ? "2xl"
+        : width >= 1280
+          ? "xl"
+          : width >= 1024
+            ? "lg"
+            : width >= 768
+              ? "md"
+              : width >= 640
+                ? "sm"
+                : "xs";
+  };
+
   let lastScrollY = $state(0);
 
+  const handleScroll = () => {
+    if (!fullOnScroll) return;
+
+    const scrollY = layout.scrollY;
+    const scrollingDown = scrollY > lastScrollY + hNavbar;
+    const scrollingUp = scrollY < lastScrollY - hNavbar;
+    const nearTop = scrollY <= hNavbar;
+
+    if (scrollingDown) {
+      if (fullOnScroll) layout.barsHidden = true;
+      lastScrollY = layout.scrollY;
+    } else if (nearTop || scrollingUp) {
+      if (fullOnScroll) layout.barsHidden = false;
+      lastScrollY = layout.scrollY;
+    }
+  };
+
   $effect(() => {
-    window.onscroll = () => {
-      const scrollingDown = window.scrollY > lastScrollY + hNavbar;
-      const scrollingUp = window.scrollY < lastScrollY - hNavbar;
+    if (layout.scrollY) handleScroll();
+  });
 
-      const nearBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - hNavbar;
+  $effect(() => {
+    checkBreakpoint();
+    window.addEventListener("resize", checkBreakpoint);
 
-      const nearTop = window.scrollY <= hNavbar;
-
-      if ((scrollingDown && !nearBottom) || (scrollingUp && !nearTop)) {
-        if (fullOnScroll) layout.barsHidde = true;
-        lastScrollY = window.scrollY;
-      } else if (nearTop || nearBottom) {
-        if (fullOnScroll) layout.barsHidde = false;
-        lastScrollY = window.scrollY;
-      }
+    return () => {
+      window.removeEventListener("resize", checkBreakpoint);
     };
   });
 </script>
 
 <div
-  class={cn("layout", className)}
+  class={cn("layout-root", className)}
   style:--h-navbar={hNavbarActive}
   style:--h-dock={hDockActive}
   style:--navbar-inset={navbarInsetActive}

@@ -9,6 +9,6 @@
   const { children, class: className }: Props = $props();
 </script>
 
-<div class={cn("menu-list scrollbox-y", className)}>
+<ul class={cn("menu-list", className)}>
   {@render children?.()}
-</div>
+</ul>

@@ -5,10 +5,11 @@
   type Props = {
     children?: Snippet;
     class?: string;
+    direction?: "row" | "column" | "row-reverse" | "column-reverse";
   };
-  const { children, class: className }: Props = $props();
+  const { children, class: className, direction = "row" }: Props = $props();
 </script>
 
-<div class={cn("flex", className)}>
+<div class={cn(direction, className)}>
   {@render children?.()}
 </div>

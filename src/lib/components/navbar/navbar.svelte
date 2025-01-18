@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { LayoutState } from "$lib/types.js";
   import cn from "$lib/utils/classNames.js";
   import type { Snippet } from "svelte";
   import { getContext } from "svelte";
@@ -8,11 +9,9 @@
     class?: string;
   };
   const { children, class: className }: Props = $props();
-  const layout: any = getContext("layout");
+  const layout: LayoutState = getContext("layout");
 </script>
 
 <div class={cn("navbar-root", className)}>
-  <div class="navbar-wrapper">
-    {@render children?.()}
-  </div>
+  {@render children?.()}
 </div>

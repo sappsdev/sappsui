@@ -1,31 +1,36 @@
 <script lang="ts">
-  import { Footer, Layout, Navbar, Sidebar, Text } from "$lib/index.js";
+  import { Flex, Layout, Sidebar } from "$lib/index.js";
   let { children } = $props();
 </script>
 
-<Layout.Root class="container mx-auto" hDock={64} hNavbar={64}>
-  <Navbar.Root>
-    <Navbar.Content>
-      <Navbar.Brand>
-        <Text variant="h1">SappsUI</Text>
-      </Navbar.Brand>
-    </Navbar.Content>
-    <Navbar.Content>
-      <Navbar.Item>Docs</Navbar.Item>
-      <Navbar.Item>Components</Navbar.Item>
-      <Navbar.Item>Blog</Navbar.Item>
-    </Navbar.Content>
-  </Navbar.Root>
-  <Sidebar.Root>
+<Layout.Body class="boxed">
+  <Sidebar.Root breakpoint="md">
     <Sidebar.Body>
       <Sidebar.Menu>
         <Sidebar.Item href="/docs/card">Card</Sidebar.Item>
+        <Sidebar.Item href="/docs/layout">Layout</Sidebar.Item>
+        <Sidebar.Item href="/docs/button">Button</Sidebar.Item>
+        <Sidebar.Item href="/docs/tabs">Tabs</Sidebar.Item>
+        <Sidebar.Item href="/docs/textfield">TextField</Sidebar.Item>
+        <Sidebar.Item href="/docs/typography">Typography</Sidebar.Item>
       </Sidebar.Menu>
     </Sidebar.Body>
+    <Sidebar.Footer>Footer</Sidebar.Footer>
   </Sidebar.Root>
-  <Sidebar.Root placement="right">
-    <Sidebar.Body>Right</Sidebar.Body>
+  <Layout.Main class="p-3 overflow-x-hidden">
+    {@render children()}
+  </Layout.Main>
+  <Sidebar.Root placement="right" breakpoint="xl">
+    <Sidebar.Header>Header</Sidebar.Header>
+    <Sidebar.Body>
+      <Sidebar.Menu>
+        {#each [1, 2, 3, 4] as item}
+          <Flex class="p-10">
+            {item}
+          </Flex>
+        {/each}
+      </Sidebar.Menu>
+    </Sidebar.Body>
+    <Sidebar.Footer>Footer</Sidebar.Footer>
   </Sidebar.Root>
-  {@render children()}
-  <Footer.Root>footer</Footer.Root>
-</Layout.Root>
+</Layout.Body>

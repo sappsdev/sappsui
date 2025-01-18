@@ -3,7 +3,7 @@ const base = {
     "@apply bg-background text-content": {},
   },
   ".boxed": {
-    "@apply container mx-auto": {},
+    "@apply lg:container lg:mx-auto": {},
   },
 };
 

@@ -3,13 +3,9 @@
 </script>
 
 <Page>
-  <h1 class="text-primary">Welcome to your library project</h1>
-  <p>
-    Create your package using @sveltejs/package and preview/showcase your work
-    with SvelteKit
-  </p>
-  <p>
-    Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
-    documentation
-  </p>
+  <div class="block sm:hidden">xs</div>
+  <div class="hidden sm:block md:hidden">sm</div>
+  <div class="hidden md:block lg:hidden">md</div>
+  <div class="hidden lg:block xl:hidden">lg</div>
+  <div class="hidden xl:block">xl</div>
 </Page>
