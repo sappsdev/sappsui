@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@source "./lib/css";
+@plugin "./lib/css/index";
+
+body {
+  font-family: "Montserrat Variable", sans-serif;
+}
+
+:root {
+  --color-primary: oklch(56.3% 0.255 296.7);
+  --color-primary-foreground: oklch(98% 0.005 296.7);
+  --color-secondary: oklch(55.3% 0.22 262.3);
+  --color-secondary-foreground: oklch(98% 0.005 262.3);
+  --color-accent: oklch(70% 0.15 198.5);
+  --color-accent-foreground: oklch(98% 0.005 198.5);
+  --color-muted: oklch(85% 0 0);
+  --color-muted-foreground: oklch(45% 0 0);
+  --color-success: oklch(65% 0.15 142.5);
+  --color-success-foreground: oklch(98% 0.005 142.5);
+  --color-info: oklch(65% 0.15 230.5);
+  --color-info-foreground: oklch(98% 0.005 230.5);
+  --color-warning: oklch(75% 0.15 82.5);
+  --color-warning-foreground: oklch(98% 0.005 82.5);
+  --color-danger: oklch(65% 0.25 25.5);
+  --color-danger-foreground: oklch(98% 0.005 25.5);
+  --color-base-100: oklch(98% 0 0);
+  --color-base-100-foreground: oklch(25% 0 0);
+  --color-base-200: oklch(95% 0 0);
+  --color-base-200-foreground: oklch(15% 0 0);
+  --color-base-300: oklch(92% 0 0);
+  --color-base-300-foreground: oklch(10% 0 0);
+  --color-border: oklch(85% 0 0);
+  --color-border-foreground: oklch(15% 0 0);
+}
+
+.dark {
+  --color-primary: oklch(56.3% 0.255 296.7);
+  --color-primary-foreground: oklch(98% 0.005 296.7);
+  --color-secondary: oklch(55.3% 0.22 262.3);
+  --color-secondary-foreground: oklch(98% 0.005 262.3);
+  --color-accent: oklch(70% 0.15 198.5);
+  --color-accent-foreground: oklch(98% 0.005 198.5);
+  --color-muted: oklch(30% 0 0);
+  --color-muted-foreground: oklch(65% 0 0);
+  --color-success: oklch(65% 0.15 142.5);
+  --color-success-foreground: oklch(98% 0.005 142.5);
+  --color-info: oklch(65% 0.15 230.5);
+  --color-info-foreground: oklch(98% 0.005 230.5);
+  --color-warning: oklch(75% 0.15 82.5);
+  --color-warning-foreground: oklch(98% 0.005 82.5);
+  --color-danger: oklch(65% 0.25 25.5);
+  --color-danger-foreground: oklch(98% 0.005 25.5);
+  --color-base-100: oklch(15% 0 0);
+  --color-base-100-foreground: oklch(95% 0 0);
+  --color-base-200: oklch(20% 0 0);
+  --color-base-200-foreground: oklch(85% 0 0);
+  --color-base-300: oklch(25% 0 0);
+  --color-base-300-foreground: oklch(75% 0 0);
+  --color-border: oklch(30% 0 0);
+  --color-border-foreground: oklch(65% 0 0);
+}
