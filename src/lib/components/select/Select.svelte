@@ -3,6 +3,7 @@
   import { clickOutside, cn, popoverPosition } from "$lib/utils/index.js";
   import type { Snippet } from "svelte";
   import { slide } from "svelte/transition";
+  import { setContext } from "svelte";
 
   type Props = {
     children?: Snippet;
@@ -11,6 +12,7 @@
     info?: string;
     error?: string;
     isOpen?: boolean;
+    value?: string | number | null;
     variant?: "flat" | "bordered" | "faded" | "underlined";
     labelPlacement?: "inside" | "outside" | "outside-left";
     color?:
@@ -37,7 +39,18 @@
     size = "s-md",
     radius = "r-md",
     isOpen = $bindable(false),
+    value = $bindable(),
   }: Props = $props();
+
+  let select = $state({
+    selected: value || null,
+  });
+
+  setContext("select", select);
+
+  $effect(() => {
+    value = select.selected;
+  });
 </script>
 
 <div class="form-control" use:clickOutside={() => (isOpen = false)}>

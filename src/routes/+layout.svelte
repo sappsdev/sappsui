@@ -158,6 +158,23 @@
         },
       ],
     },
+    {
+      title: "Plugins",
+      items: [
+        {
+          name: "Copy",
+          href: "/copy",
+        },
+        {
+          name: "Mapbox",
+          href: "/mapbox",
+        },
+        {
+          name: "Charts",
+          href: "/charts",
+        },
+      ],
+    },
   ];
 </script>
 

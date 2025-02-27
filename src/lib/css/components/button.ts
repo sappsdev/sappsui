@@ -29,14 +29,14 @@ export default {
 
     // Variant: solid
     "&.solid": {
-      "@apply [.muted]:bg-gray-500 [.muted]:text-white": {},
-      "@apply [.primary]:bg-primary [.primary]:text-white": {},
-      "@apply [.secondary]:bg-secondary [.secondary]:text-white": {},
-      "@apply [.accent]:bg-accent [.accent]:text-white": {},
-      "@apply [.info]:bg-info [.info]:text-white": {},
-      "@apply [.success]:bg-success [.success]:text-white": {},
-      "@apply [.warning]:bg-warning [.warning]:text-white": {},
-      "@apply [.danger]:bg-danger [.danger]:text-white": {},
+      "@apply [.muted]:bg-muted [.muted]:text-muted-foreground": {},
+      "@apply [.primary]:bg-primary [.primary]:text-primary-foreground": {},
+      "@apply [.secondary]:bg-secondary [.secondary]:text-secondary-foreground": {},
+      "@apply [.accent]:bg-accent [.accent]:text-accent-foreground": {},
+      "@apply [.info]:bg-info [.info]:text-info-foreground": {},
+      "@apply [.success]:bg-success [.success]:text-success-foreground": {},
+      "@apply [.warning]:bg-warning [.warning]:text-warning-foreground": {},
+      "@apply [.danger]:bg-danger [.danger]:text-danger-foreground": {},
 
       "@apply hover:opacity-90": {},
     },
@@ -44,7 +44,7 @@ export default {
     // Variant: bordered
     "&.bordered": {
       "@apply border-2 bg-transparent": {},
-      "@apply [.muted]:border-gray-500 [.muted]:text-gray-500": {},
+      "@apply [.muted]:border-muted [.muted]:text-muted": {},
       "@apply [.primary]:border-primary [.primary]:text-primary": {},
       "@apply [.secondary]:border-secondary [.secondary]:text-secondary": {},
       "@apply [.accent]:border-accent [.accent]:text-accent": {},
@@ -59,7 +59,7 @@ export default {
     // Variant: light
     "&.light": {
       "@apply bg-transparent": {},
-      "@apply [.muted]:text-gray-500 [.muted]:bg-gray-500/20": {},
+      "@apply [.muted]:text-muted [.muted]:bg-muted/20": {},
       "@apply [.primary]:text-primary [.primary]:bg-primary/20": {},
       "@apply [.secondary]:text-secondary [.secondary]:bg-secondary/20": {},
       "@apply [.accent]:text-accent [.accent]:bg-accent/20": {},
@@ -68,7 +68,7 @@ export default {
       "@apply [.warning]:text-warning [.warning]:bg-warning/20": {},
       "@apply [.danger]:text-danger [.danger]:bg-danger/20": {},
 
-      "@apply [.muted]:hover:bg-gray-500/30": {},
+      "@apply [.muted]:hover:bg-muted/30": {},
       "@apply [.primary]:hover:bg-primary/30": {},
       "@apply [.secondary]:hover:bg-secondary/30": {},
       "@apply [.accent]:hover:bg-accent/30": {},
@@ -80,7 +80,7 @@ export default {
 
     // Variant: flat
     "&.flat": {
-      "@apply [.muted]:text-gray-500 [.muted]:bg-gray-100": {},
+      "@apply [.muted]:text-muted [.muted]:bg-gray-100": {},
       "@apply [.primary]:text-primary [.primary]:bg-primary/10": {},
       "@apply [.secondary]:text-secondary [.secondary]:bg-secondary/10": {},
       "@apply [.accent]:text-accent [.accent]:bg-accent/10": {},
@@ -95,7 +95,7 @@ export default {
     // Variant: faded
     "&.faded": {
       "@apply border bg-base-100/80": {},
-      "@apply [.muted]:border-gray-500/50 [.muted]:text-gray-500": {},
+      "@apply [.muted]:border-muted/50 [.muted]:text-muted": {},
       "@apply [.primary]:border-primary/50 [.primary]:text-primary": {},
       "@apply [.secondary]:border-secondary/50 [.secondary]:text-secondary": {},
       "@apply [.accent]:border-accent/50 [.accent]:text-accent": {},
@@ -110,20 +110,20 @@ export default {
     // Variant: shadow
     "&.shadow": {
       "@apply shadow-lg": {},
-      "@apply [.muted]:bg-gray-500 [.muted]:text-white [.muted]:shadow-gray-500/50":
+      "@apply [.muted]:bg-muted [.muted]:text-muted-foreground [.muted]:shadow-muted/50":
         {},
-      "@apply [.primary]:bg-primary [.primary]:text-white [.primary]:shadow-primary/50":
+      "@apply [.primary]:bg-primary [.primary]:text-primary-foreground [.primary]:shadow-primary/50":
         {},
-      "@apply [.secondary]:bg-secondary [.secondary]:text-white [.secondary]:shadow-secondary/50":
+      "@apply [.secondary]:bg-secondary [.secondary]:text-secondary-foreground [.secondary]:shadow-secondary/50":
         {},
-      "@apply [.accent]:bg-accent [.accent]:text-white [.accent]:shadow-accent/50":
+      "@apply [.accent]:bg-accent [.accent]:text-accent-foreground [.accent]:shadow-accent/50":
         {},
-      "@apply [.info]:bg-info [.info]:text-white [.info]:shadow-info/50": {},
-      "@apply [.success]:bg-success [.success]:text-white [.success]:shadow-success/50":
+      "@apply [.info]:bg-info [.info]:text-info-foreground [.info]:shadow-info/50": {},
+      "@apply [.success]:bg-success [.success]:text-success-foreground [.success]:shadow-success/50":
         {},
-      "@apply [.warning]:bg-warning [.warning]:text-white [.warning]:shadow-warning/50":
+      "@apply [.warning]:bg-warning [.warning]:text-warning-foreground [.warning]:shadow-warning/50":
         {},
-      "@apply [.danger]:bg-danger [.danger]:text-white [.danger]:shadow-danger/50":
+      "@apply [.danger]:bg-danger [.danger]:text-danger-foreground [.danger]:shadow-danger/50":
         {},
 
       "@apply hover:opacity-90 hover:shadow-xl": {},
@@ -132,7 +132,7 @@ export default {
     // Variant: ghost
     "&.ghost": {
       "@apply border-2 bg-transparent": {},
-      "@apply [.muted]:border-transparent [.muted]:text-gray-500 hover:[.muted]:bg-gray-500/20":
+      "@apply [.muted]:border-transparent [.muted]:text-muted hover:[.muted]:bg-muted/20":
         {},
       "@apply [.primary]:border-transparent [.primary]:text-primary hover:[.primary]:bg-primary/20":
         {},
@@ -153,7 +153,7 @@ export default {
     // Focus styles
     "&:focus-visible": {
       "@apply outline-none ring-2": {},
-      "@apply [.muted]:ring-gray-500/20": {},
+      "@apply [.muted]:ring-muted/20": {},
       "@apply [.primary]:ring-primary/20": {},
       "@apply [.secondary]:ring-secondary/20": {},
       "@apply [.accent]:ring-accent/20": {},
