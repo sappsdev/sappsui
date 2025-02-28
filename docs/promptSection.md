@@ -122,9 +122,6 @@
 
 - src: string (src of the image)
 - alt: string (alt of the image)
-- layout?: "constrained" | "fullWidth" | "fixed", default "constrained"
-- priority?: boolean;
-- fallback?: string;
 - class?: string (additional tailwind classes)
 - shadow?: "sh-sm" | "sh-md" | "sh-lg" | "sh-xl" | "sh-none", default "sh-md"
 - radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full", default "r-md"
