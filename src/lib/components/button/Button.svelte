@@ -4,7 +4,9 @@
 
   type Props = {
     children?: Snippet;
-    onClick?: () => void;
+    disabled?: boolean;
+    type?: "submit" | "reset" | "button";
+    onclick?: () => void;
     class?: string;
     size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl";
     radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
@@ -28,15 +30,17 @@
   };
   const {
     children,
-    onClick,
+    onclick,
     variant = "solid",
     size = "s-md",
     radius = "r-md",
     color = "primary",
     class: className,
+    disabled,
+    type = "button",
   }: Props = $props();
 </script>
 
-<button onclick={onClick} class={cn("btn", variant, size, radius, color, className)}>
+<button onclick={onclick} {type} {disabled} class={cn("btn", variant, size, radius, color, className)}>
   {@render children?.()}
 </button>
