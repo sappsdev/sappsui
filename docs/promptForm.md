@@ -17,6 +17,10 @@
 - radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full", default "r-md"
 - color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger", default "muted"
 
+### children:
+
+- input | textarea, with props of the input or textarea and rune state for bind value
+
 ## Select:
 
 ### description:
@@ -25,6 +29,19 @@
 
 ### Props:
 
+- class?: string (additional tailwind classes)
+- bind:value?: any (initial selected value)
+
+### Requires:
+- SelectTrigger | SelectContent
+
+
+
+### children:
+- SelectTrigger | SelectContent
+
+## SelectTrigger:
+### Props:
 - class?: string (additional tailwind classes)
 - label?: string (label of the input)
 - info?: string (info of the input)
@@ -35,6 +52,39 @@
 - radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full", default "r-md"
 - color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger", default "muted"
 
+### children:
+- Icon | Text | I18n | Icon + Text
+
+## SelectContent:
+### Props:
+- class?: string (additional tailwind classes)
+### children:
+- SelectItem
+
+## SelectItem:
+### Props:
+- class?: string (additional tailwind classes)
+- value: any (value of the item)
+
+### children:
+- Icon | Text | I18n | Icon + Text  
+
+
+## RadioGroup:
+### description:
+- RadioGroup component for forms input
+### Props:
+- class?: string (additional tailwind classes)
+- bind:value?: any (initial selected value)
+### children:
+- Radio
+
+## Radio:
+### Props:
+- class?: string (additional tailwind classes)
+- value: any (value of the item)
+### children:
+- Icon | Text | I18n | Icon + Text
 
 # Specific Requirements
 

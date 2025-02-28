@@ -134,9 +134,6 @@
 - image sizes used tailwind sizes
 
 
-### Children:
-
-- input | textarea, with props of the input or textarea and rune state for bind value
 
 # Available Components
 

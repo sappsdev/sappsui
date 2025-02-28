@@ -27,6 +27,9 @@ import Provider from "./components/provider/Provider.svelte";
 import Radio from "./components/radio/Radio.svelte";
 import RadioGroup from "./components/radio/RadioGroup.svelte";
 import Select from "./components/select/Select.svelte";
+import SelectContent from "./components/select/SelectContent.svelte";
+import SelectItem from "./components/select/SelectItem.svelte";
+import SelectTrigger from "./components/select/SelectTrigger.svelte";
 import Sidebar from "./components/sidebar/Sidebar.svelte";
 import SidebarBody from "./components/sidebar/SidebarBody.svelte";
 import SidebarFooter from "./components/sidebar/SidebarFooter.svelte";
@@ -38,6 +41,8 @@ import Tabs from "./components/tabs/Tabs.svelte";
 import TabsList from "./components/tabs/TabsList.svelte";
 import Text from "./components/text/Text.svelte";
 import TextField from "./components/textfield/TextField.svelte";
+import Steps from "./components/steps/Steps.svelte";
+import Step from "./components/steps/Step.svelte";
 
 export {
   Button,
@@ -69,6 +74,9 @@ export {
   Radio,
   RadioGroup,
   Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
   Sidebar,
   SidebarBody,
   SidebarFooter,
@@ -80,4 +88,6 @@ export {
   TabsList,
   Text,
   TextField,
+  Steps,
+  Step,
 };

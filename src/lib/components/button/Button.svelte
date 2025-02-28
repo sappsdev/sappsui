@@ -4,6 +4,7 @@
 
   type Props = {
     children?: Snippet;
+    onClick?: () => void;
     class?: string;
     size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl";
     radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
@@ -27,6 +28,7 @@
   };
   const {
     children,
+    onClick,
     variant = "solid",
     size = "s-md",
     radius = "r-md",
@@ -35,6 +37,6 @@
   }: Props = $props();
 </script>
 
-<button class={cn("btn", variant, size, radius, color, className)}>
+<button onclick={onClick} class={cn("btn", variant, size, radius, color, className)}>
   {@render children?.()}
 </button>
