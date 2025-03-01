@@ -17,12 +17,12 @@ export default {
   danger: "var(--color-danger)",
   "danger-foreground": "var(--color-danger-foreground)",
 
-  "base-100": "var(--color-base-100)",
-  "base-100-foreground": "var(--color-base-100-foreground)",
-  "base-200": "var(--color-base-100)",
-  "base-200-foreground": "var(--color-base-100-foreground)",
-  "base-300": "var(--color-base-200)",
-  "base-300-foreground": "var(--color-base-200-foreground)",
+  base100: "var(--color-base100)",
+  "base100-foreground": "var(--color-base100-foreground)",
+  base200: "var(--color-base100)",
+  "base200-foreground": "var(--color-base100-foreground)",
+  base300: "var(--color-base200)",
+  "base300-foreground": "var(--color-base200-foreground)",
 
   border: "var(--color-border)",
   "border-foreground": "var(--color-border-focus)",

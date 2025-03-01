@@ -3,7 +3,7 @@ export default {
     "@apply relative flex items-center gap-2 w-full": {},
     "@apply border appearance-none outline-none select-none": {},
     "@apply transition-all duration-200": {},
-    "@apply bg-base-100 border": {},
+    "@apply bg-base100 border": {},
     "@apply py-2": {},
 
     "@apply px-4 min-h-[3rem] text-sm": {},
@@ -104,7 +104,7 @@ export default {
 
     // Label styles
     ".label": {
-      "@apply absolute left-3 top-0.5 px-1 text-sm pointer-events-none transition-all duration-200 z-10 text-base-100-foreground/70":
+      "@apply absolute left-3 top-0.5 px-1 text-sm pointer-events-none transition-all duration-200 z-10 text-base100-foreground/70":
         {},
 
       "@apply group-[.underlined]:left-0": {},

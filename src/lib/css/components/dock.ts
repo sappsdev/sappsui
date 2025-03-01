@@ -1,6 +1,6 @@
 export default {
   ".dock-root": {
-    "@apply h-[var(--h-dock)] w-full fixed bottom-0 z-30 bg-base-100": {},
+    "@apply h-[var(--h-dock)] w-full fixed bottom-0 z-30 bg-base100": {},
     "@apply transition-all duration-300 ease-in-out": {},
   },
   ".dock-body": {

@@ -3,7 +3,7 @@ export default {
     "@apply relative inline-block": {},
   },
   ".dropdown-content": {
-    "@apply absolute z-30 bg-base-100 w-full column": {},
+    "@apply absolute z-30 bg-base100 w-full column": {},
     "@apply max-h-56 overflow-y-auto drop-shadow-lg box-border": {},
     "@apply my-1 rounded-xl": {},
     "@apply flex flex-1 w-full flex-auto flex-col": {},

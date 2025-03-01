@@ -1,8 +1,9 @@
 export default {
   ".dropzone": {
-    "@apply relative flex flex-col items-center justify-center w-full min-h-[200px] cursor-pointer": {},
+    "@apply relative flex flex-col items-center justify-center w-full min-h-[200px] cursor-pointer":
+      {},
     "@apply border-2 border-dashed transition-all duration-200": {},
-    "@apply bg-base-100": {},
+    "@apply bg-base100": {},
 
     "@apply [.s-sm]:min-h-[150px] [.s-sm]:text-sm": {},
     "@apply [.s-md]:min-h-[200px] [.s-md]:text-base": {},
@@ -25,12 +26,13 @@ export default {
     "&.flat": {
       "@apply [.muted]:border-muted/10 [.muted]:bg-muted/20": {},
       "@apply [.primary]:border-primary/10 [.primary]:bg-primary/20": {},
-      "@apply [.secondary]:border-secondary/10 [.secondary]:bg-secondary/20": {},
+      "@apply [.secondary]:border-secondary/10 [.secondary]:bg-secondary/20":
+        {},
       "@apply [.accent]:border-accent/10 [.accent]:bg-accent/20": {},
       "@apply [.info]:border-info/10 [.info]:bg-info/20": {},
       "@apply [.success]:border-success/10 [.success]:bg-success/20": {},
       "@apply [.warning]:border-warning/10 [.warning]:bg-warning/20": {},
-      "@apply [.danger]:border-danger/10 [.danger]:bg-danger/20": {}
+      "@apply [.danger]:border-danger/10 [.danger]:bg-danger/20": {},
     },
 
     "&.bordered": {
@@ -41,7 +43,7 @@ export default {
       "@apply [.info]:border-info": {},
       "@apply [.success]:border-success": {},
       "@apply [.warning]:border-warning": {},
-      "@apply [.danger]:border-danger": {}
+      "@apply [.danger]:border-danger": {},
     },
 
     "&.faded": {
@@ -52,32 +54,33 @@ export default {
       "@apply [.info]:bg-info/20": {},
       "@apply [.success]:bg-success/20": {},
       "@apply [.warning]:bg-warning/20": {},
-      "@apply [.danger]:bg-danger/20": {}
+      "@apply [.danger]:bg-danger/20": {},
     },
 
     "&.drag-over": {
-      "@apply border-primary/50 bg-primary/5": {}
+      "@apply border-primary/50 bg-primary/5": {},
     },
 
     "&.disabled": {
-      "@apply opacity-50 cursor-not-allowed": {}
+      "@apply opacity-50 cursor-not-allowed": {},
     },
 
     ".file-input": {
-      "@apply hidden": {}
+      "@apply hidden": {},
     },
 
     ".dropzone-placeholder": {
-      "@apply flex flex-col items-center justify-center gap-2 p-4 text-center": {},
+      "@apply flex flex-col items-center justify-center gap-2 p-4 text-center":
+        {},
       ".icon": {
-        "@apply text-gray-400 mb-2": {}
+        "@apply text-gray-400 mb-2": {},
       },
       ".label": {
-        "@apply text-gray-600 font-medium": {}
+        "@apply text-gray-600 font-medium": {},
       },
       ".info": {
-        "@apply text-gray-400 text-sm": {}
-      }
+        "@apply text-gray-400 text-sm": {},
+      },
     },
 
     ".file-list": {
@@ -88,41 +91,47 @@ export default {
         "@apply relative": {},
 
         ".file-preview": {
-          "@apply relative flex items-center gap-3 p-3 rounded-lg border bg-base-200": {},
+          "@apply relative flex items-center gap-3 p-3 rounded-lg border bg-base200":
+            {},
 
           ".file-icon": {
-            "@apply flex items-center justify-center w-10 h-10 rounded-md bg-base-300 text-gray-500": {}
+            "@apply flex items-center justify-center w-10 h-10 rounded-md bg-base300 text-gray-500":
+              {},
           },
 
           ".file-info": {
             "@apply flex-1 min-w-0": {},
 
             ".file-name": {
-              "@apply text-sm font-medium truncate": {}
+              "@apply text-sm font-medium truncate": {},
             },
             ".file-size": {
-              "@apply text-xs text-gray-400": {}
-            }
+              "@apply text-xs text-gray-400": {},
+            },
           },
 
           ".progress-bar": {
-            "@apply absolute bottom-0 left-0 w-full h-1 bg-gray-200 rounded-b-lg overflow-hidden": {},
+            "@apply absolute bottom-0 left-0 w-full h-1 bg-gray-200 rounded-b-lg overflow-hidden":
+              {},
             ".progress": {
-              "@apply h-full bg-primary transition-all duration-200": {}
-            }
+              "@apply h-full bg-primary transition-all duration-200": {},
+            },
           },
 
           ".remove-button": {
-            "@apply flex items-center justify-center w-6 h-6 text-gray-400 hover:text-danger transition-colors": {},
-            "@apply disabled:opacity-50 disabled:cursor-not-allowed": {}
-          }
-        }
+            "@apply flex items-center justify-center w-6 h-6 text-gray-400 hover:text-danger transition-colors":
+              {},
+            "@apply disabled:opacity-50 disabled:cursor-not-allowed": {},
+          },
+        },
       },
 
       ".add-more": {
-        "@apply flex items-center justify-center w-full h-full min-h-[100px] rounded-lg border-2 border-dashed": {},
-        "@apply text-gray-400 hover:text-primary hover:border-primary transition-colors": {}
-      }
-    }
-  }
-}
+        "@apply flex items-center justify-center w-full h-full min-h-[100px] rounded-lg border-2 border-dashed":
+          {},
+        "@apply text-gray-400 hover:text-primary hover:border-primary transition-colors":
+          {},
+      },
+    },
+  },
+};

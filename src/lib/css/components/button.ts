@@ -31,7 +31,8 @@ export default {
     "&.solid": {
       "@apply [.muted]:bg-muted [.muted]:text-muted-foreground": {},
       "@apply [.primary]:bg-primary [.primary]:text-primary-foreground": {},
-      "@apply [.secondary]:bg-secondary [.secondary]:text-secondary-foreground": {},
+      "@apply [.secondary]:bg-secondary [.secondary]:text-secondary-foreground":
+        {},
       "@apply [.accent]:bg-accent [.accent]:text-accent-foreground": {},
       "@apply [.info]:bg-info [.info]:text-info-foreground": {},
       "@apply [.success]:bg-success [.success]:text-success-foreground": {},
@@ -94,7 +95,7 @@ export default {
 
     // Variant: faded
     "&.faded": {
-      "@apply border bg-base-100/80": {},
+      "@apply border bg-base100/80": {},
       "@apply [.muted]:border-muted/50 [.muted]:text-muted": {},
       "@apply [.primary]:border-primary/50 [.primary]:text-primary": {},
       "@apply [.secondary]:border-secondary/50 [.secondary]:text-secondary": {},
@@ -104,7 +105,7 @@ export default {
       "@apply [.warning]:border-warning/50 [.warning]:text-warning": {},
       "@apply [.danger]:border-danger/50 [.danger]:text-danger": {},
 
-      "@apply hover:bg-base-100": {},
+      "@apply hover:bg-base100": {},
     },
 
     // Variant: shadow
@@ -118,7 +119,8 @@ export default {
         {},
       "@apply [.accent]:bg-accent [.accent]:text-accent-foreground [.accent]:shadow-accent/50":
         {},
-      "@apply [.info]:bg-info [.info]:text-info-foreground [.info]:shadow-info/50": {},
+      "@apply [.info]:bg-info [.info]:text-info-foreground [.info]:shadow-info/50":
+        {},
       "@apply [.success]:bg-success [.success]:text-success-foreground [.success]:shadow-success/50":
         {},
       "@apply [.warning]:bg-warning [.warning]:text-warning-foreground [.warning]:shadow-warning/50":

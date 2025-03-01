@@ -33,6 +33,98 @@
 </Flex>
 ```
 
+## Layout Component Usage
+
+- Only for +layout.svelte files
+
+The Layout component is a versatile container that can be configured for various use cases. Here are common layout patterns and their implementations:
+
+### Basic Layout Structure
+
+Every layout consists of these main components:
+
+- `Layout`: The main container component
+- `LayoutBody`: Wrapper for the main content area
+- `LayoutMain`: The primary content container
+
+### Common Layout Patterns
+
+#### 1. Simple Layout (No navbar/sidebar)
+
+Ideal for authentication pages or focused content:
+
+```svelte
+<Layout>
+  <LayoutBody>
+    <LayoutMain>
+      <!-- Page content -->
+    </LayoutMain>
+  </LayoutBody>
+</Layout>
+```
+
+#### 2. Landing Page Layout (With navbar)
+
+Perfect for marketing sites and landing pages:
+
+```svelte
+<Layout hNavbar={64} navbarInset>
+  <Navbar>
+    <NavbarBody>
+      <!-- Navbar content -->
+    </NavbarBody>
+  </Navbar>
+  <LayoutBody>
+    <LayoutMain>
+      <!-- Page content -->
+    </LayoutMain>
+  </LayoutBody>
+</Layout>
+```
+
+#### 3. Dashboard Layout (Navbar + Sidebar)
+
+Ideal for admin panels and complex applications:
+
+```svelte
+<Layout hNavbar={64} wlSidebar={200} navbarInset>
+  <Navbar>
+    <NavbarBody>
+      <!-- Navbar content -->
+    </NavbarBody>
+  </Navbar>
+  <LayoutBody>
+    <Sidebar breakpoint="md">
+      <SidebarBody>
+        <!-- Sidebar content -->
+      </SidebarBody>
+    </Sidebar>
+    <LayoutMain>
+      <!-- Main content -->
+    </LayoutMain>
+  </LayoutBody>
+</Layout>
+```
+
+### Layout Configuration Props
+
+| Prop           | Description                                       | Example               |
+| -------------- | ------------------------------------------------- | --------------------- |
+| `hNavbar`      | Height of the navbar in pixels                    | `hNavbar={64}`        |
+| `hDock`        | Height of the dock in pixels                      | `hDock={56}`          |
+| `wlSidebar`    | Width of the left sidebar in pixels               | `wlSidebar={250}`     |
+| `wrSidebar`    | Width of the right sidebar in pixels              | `wrSidebar={250}`     |
+| `navbarInset`  | Whether to inset the layout body below the navbar | `navbarInset={true}`  |
+| `fullOnScroll` | Whether to hide the navbar when scrolling down    | `fullOnScroll={true}` |
+
+### Responsive Behavior
+
+The sidebar component includes a `breakpoint` prop that controls its responsive behavior:
+
+- Available breakpoints: `"sm"`, `"md"`, `"lg"`, `"xl"`, `"2xl"`
+- Below the breakpoint: Sidebar becomes a drawer
+- Above the breakpoint: Sidebar remains fixed
+
 ## Common Responsive Patterns
 
 ### Text Alignment
@@ -59,7 +151,7 @@
 
 ## ALready base theme colors
 
-- bg--base-100 text-base-100-foreground
+- bg--base100 text-base100-foreground
 
 ## Colors
 
@@ -87,12 +179,12 @@
 
 ### Background Colors
 
-- Base: bg-base-100
-- Base foreground: text-base-100-foreground
-- Base 100: bg-base-100
-- Base 100 foreground: text-base-100-foreground
-- Base 200: bg-base-200
-- Base 200 foreground: text-base-200-foreground
+- Base: bg-base100
+- Base foreground: text-base100-foreground
+- Base 100: bg-base100
+- Base 100 foreground: text-base100-foreground
+- Base 200: bg-base200
+- Base 200 foreground: text-base200-foreground
 
 ### Utility Colors
 
@@ -382,9 +474,10 @@ import {
 **Usage:** `import { TabsList } from 'sappsui';`
 **Props:**
 
-- `size?: "sm" | "md" | "lg"` (default "md")
 - `variant?: "solid" | "underlined" | "bordered" | "light"` (default "solid")
-- `radius?: "sm" | "md" | "lg"` (default "md")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `size?: "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"`
 - `class?: string` (additional tailwind classes)
   **Children:** Tab components
   **Relationships:** Must be a direct child of Tabs
@@ -506,7 +599,7 @@ import {
     </Card>
 
     <!-- Tabs with proper child hierarchy -->
-    <Tabs active={$activeTab}>
+    <Tabs active="tab1>
       <TabsList>
         <Tab key="tab1">
           <Text>First Tab</Text>
@@ -515,7 +608,7 @@ import {
           <Text>Second Tab</Text>
         </Tab>
       </TabsList>
-      <TabContent>
+      <TabContent key="tab1">
         <!-- Content changes based on active tab -->
         <Text>Tab content here</Text>
       </TabContent>
@@ -618,7 +711,7 @@ import {
 - `size?: "s-sm" | "s-md" | "s-lg"` - Component size (default: "s-md")
 - `radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"` - Border radius (default: "r-md")
 - `shadow?: "sh-sm" | "sh-md" | "sh-lg" | "sh-xl" | "sh-none"` - Shadow style (default: "sh-sm")
-- `accept?: string` - File types to accept (default: "image/*,application/pdf")
+- `accept?: string` - File types to accept (default: "image/\*,application/pdf")
 - `multiple?: boolean` - Allow multiple file selection (default: true)
 - `maxSize?: number` - Maximum file size in bytes (default: 10MB)
 - `maxFiles?: number` - Maximum number of files allowed (default: 5)

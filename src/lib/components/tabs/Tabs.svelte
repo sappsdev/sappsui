@@ -23,6 +23,6 @@
   setContext("tabs", tabs);
 </script>
 
-<div class={cn("tabs-root", placement, className)}>
+<div class={cn("tabs", placement, className)}>
   {@render children?.()}
 </div>

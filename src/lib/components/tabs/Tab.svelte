@@ -15,14 +15,6 @@
 
   const handleClick = () => {
     tabs.active = key;
-    if (buttonRef && tabs.listRef && tabs.indicatorRef) {
-      const rect = buttonRef.getBoundingClientRect();
-      const parent = tabs.listRef.getBoundingClientRect();
-      tabs.indicatorRef.style.width = `${rect.width}px`;
-      tabs.indicatorRef.style.height = `${rect.height}px`;
-      tabs.indicatorRef.style.left = `${rect.left - parent.left}px`;
-      tabs.indicatorRef.style.top = `${rect.top - parent.top}px`;
-    }
   };
 
   $effect(() => {
@@ -32,27 +24,22 @@
         block: "nearest",
         inline: "center",
       });
-      handleClick();
     }
   });
 </script>
 
 <button
   bind:this={buttonRef}
+  data-key={key}
   class={cn(
     "tab",
     tabs?.variant,
-    tabs?.placement,
-    tabs?.size,
     tabs?.radius,
-    tabs?.color && `color-${tabs.color}`,
-    tabs?.active === key && "active",
+    tabs?.color,
+    tabs?.active === key && "selected",
     className
   )}
-  data-key={key}
   onclick={handleClick}
 >
-  <div class="tab-content">
-    {@render children?.()}
-  </div>
+  {@render children?.()}
 </button>

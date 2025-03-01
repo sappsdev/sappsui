@@ -18,7 +18,7 @@ export default {
     "@apply top-[var(--navbar-inset)]": {},
     "@apply bottom-[var(--dock-inset)]": {},
     "@apply h-[calc(100vh-var(--navbar-inset)-var(--dock-inset))]": {},
-    "@apply flex flex-col bg-base-100 overflow-hidden": {},
+    "@apply flex flex-col bg-base100 overflow-hidden": {},
     "@apply transition-all duration-300 ease-in-out": {},
 
     "&.left, &.right": {

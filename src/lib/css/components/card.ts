@@ -1,8 +1,7 @@
 export default {
   ".card": {
     "@apply flex flex-col relative": {},
-    "@apply h-auto outline-none box-border bg-base-100 border border-border":
-      {},
+    "@apply h-auto outline-none box-border bg-base100 border border-border": {},
     // Radius variants
     "@apply [.r-none]:rounded-none": {},
     "@apply [.r-xs]:rounded-sm": {},

@@ -1,6 +1,6 @@
 export default {
   ".navbar-root": {
-    "@apply h-[var(--h-navbar)] w-full fixed top-0 z-30 bg-base-100": {},
+    "@apply h-[var(--h-navbar)] w-full fixed top-0 z-30 bg-base100": {},
     "@apply transition-all duration-300 ease-in-out": {},
   },
   ".navbar-body": {

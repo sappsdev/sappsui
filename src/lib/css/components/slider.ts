@@ -58,7 +58,7 @@ export default {
 
     // Thumb styles
     ".slider-thumb": {
-      "@apply absolute top-1/2 w-4 h-4 bg-primary border-2 border-base-100 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-200 cursor-grab z-10":
+      "@apply absolute top-1/2 w-4 h-4 bg-primary border-2 border-base100 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-200 cursor-grab z-10":
         {},
 
       "&[data-dragging=true]": {
@@ -72,7 +72,7 @@ export default {
 
     // Mark styles
     ".slider-mark": {
-      "@apply absolute top-1/2 w-2 h-2 bg-base-200 rounded-full -translate-x-1/2 -translate-y-1/2":
+      "@apply absolute top-1/2 w-2 h-2 bg-base200 rounded-full -translate-x-1/2 -translate-y-1/2":
         {},
 
       "&[data-in-range=true]": {
@@ -95,7 +95,7 @@ export default {
 
     "&.foreground": {
       ".slider-filler, .slider-thumb, .slider-mark[data-in-range=true]": {
-        "@apply bg-base-100-foreground": {},
+        "@apply bg-base100-foreground": {},
       },
     },
 
