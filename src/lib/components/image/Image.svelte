@@ -23,13 +23,23 @@
     loading = "lazy",
     srcset,
   }: Props = $props();
+
+  let isLoading = $state(true);
 </script>
 
-
-  <img
-    class={cn("img", radius, shadow, isBlurred, isZoomed, className)}
-    {src}
-    {srcset}
-    {alt}
-    {loading}
-  />
+<img
+  class={cn(
+    "img",
+    radius,
+    shadow,
+    isBlurred,
+    isZoomed,
+    isLoading && "animate-pulse",
+    className
+  )}
+  {src}
+  {srcset}
+  {alt}
+  {loading}
+  onload={() => (isLoading = false)}
+/>

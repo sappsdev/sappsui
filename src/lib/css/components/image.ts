@@ -1,6 +1,6 @@
 export default {
   ".img": {
-    "@apply relative overflow-hidden": {},
+    "@apply relative overflow-hidden bg-muted": {},
     // Radius variants
     "@apply [.r-none]:rounded-none": {},
     "@apply [.r-xs]:rounded-sm": {},
@@ -18,7 +18,9 @@ export default {
     "@apply [.sh-xl]:shadow-xl": {},
 
     // Additional effects
-    "@apply [.isBlurred]:before:content-[''] [.isBlurred]:before:absolute [.isBlurred]:before:inset-0 [.isBlurred]:before:bg-[inherit] [.isBlurred]:before:blur-[20px] [.isBlurred]:before:scale-150 [.isBlurred]:before:-z-10": {},
-    "@apply [.isZoomed]:hover:scale-125 [.isZoomed]:transition-all [.isZoomed]:duration-300 [.isZoomed]:ease-in-out [.isZoomed]:origin-center": {}
-  }
+    "@apply [.isBlurred]:before:content-[''] [.isBlurred]:before:absolute [.isBlurred]:before:inset-0 [.isBlurred]:before:bg-[inherit] [.isBlurred]:before:blur-[20px] [.isBlurred]:before:scale-150 [.isBlurred]:before:-z-10":
+      {},
+    "@apply [.isZoomed]:hover:scale-125 [.isZoomed]:transition-all [.isZoomed]:duration-300 [.isZoomed]:ease-in-out [.isZoomed]:origin-center":
+      {},
+  },
 };
