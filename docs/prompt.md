@@ -282,6 +282,28 @@ import {
 **Children:** Icons | Text | I18n | Combination of these
 **Relationships:** Must be a direct child of RadioGroup
 
+#### Slider (from sappsui)
+**Usage:** `import { Slider } from 'sappsui';`
+**Props:**
+- `value?: number` (for single value slider mode)
+- `minValue?: number` (for range slider mode, default 0)
+- `maxValue?: number` (for range slider mode, default 100)
+- `min?: number` (minimum possible value, default 0)
+- `max?: number` (maximum possible value, default 100)
+- `step?: number` (step increment, default 1)
+- `label?: string` (label text for the slider)
+- `hideValue?: boolean` (hide the value display)
+- `hideThumb?: boolean` (hide the thumb element)
+- `showMarks?: boolean` (show step marks on the track)
+- `size?: "sm" | "md" | "lg"` (default "md")
+- `radius?: "none" | "sm" | "md" | "lg" | "full"` (default "full")
+- `color?: "foreground" | "primary" | "secondary" | "success" | "warning" | "danger"` (default "primary")
+- `disabled?: boolean` (whether the slider is disabled)
+- `class?: string` (additional tailwind classes)
+**Children:** None
+**Usage:** Use for selecting single values or ranges
+**Note:** Use either `value` for single value mode OR `minValue`/`maxValue` for range mode
+
 ### Interactive Components
 
 #### Button (from sappsui)
@@ -444,6 +466,83 @@ import {
     </Tabs>
   </Flex>
 </form>
+```
+
+## Plugins
+
+### Mapbox (from sappsui)
+**Usage:** `import { Mapbox } from 'sappsui';`
+**Props:**
+- `accessToken: string` - Your Mapbox access token
+- `style?: string` - Map style URL (default: 'mapbox://styles/mapbox/streets-v12')
+- `center?: [number, number]` - Initial map center coordinates [longitude, latitude] (default: [0, 0])
+- `zoom?: number` - Initial zoom level (default: 9)
+- `minZoom?: number` - Minimum zoom level
+- `maxZoom?: number` - Maximum zoom level
+- `bearing?: number` - Map rotation in degrees (default: 0)
+- `pitch?: number` - Map tilt in degrees (default: 0)
+- `interactive?: boolean` - Whether the map can be interacted with (default: true)
+- `attributionControl?: boolean` - Whether to show attribution control (default: true)
+- `showCurrentLocation?: boolean` - Show user's current location (default: false)
+- `showSearchControl?: boolean` - Show search control (default: false)
+- `searchControlPosition?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'` - Position of search control
+- `markers?: Array` - Array of marker objects with properties:
+  - `lngLat: [number, number]` - Marker coordinates
+  - `color?: string` - Marker color (hex code)
+  - `avatar?: string` - Icon or image URL for custom marker
+  - `popup?: object` - Popup configuration:
+    - `content: string` - HTML content
+    - `closeButton?: boolean` - Show close button
+    - `closeIcon?: string` - Custom close icon
+    - `className?: string` - Additional CSS class
+- `enableRealTimeUpdates?: boolean` - Enable real-time marker updates (default: false)
+- `animateMarkerMovement?: boolean` - Animate marker movement (default: true)
+- `animationDuration?: number` - Animation duration in milliseconds (default: 500)
+- `onLocationClick?: Function` - Callback for map clicks with location data
+- `onMarkerUpdate?: Function` - Callback for marker position updates
+- `class?: string` - Additional CSS classes
+
+**Example Usage:**
+```svelte
+<!-- Basic Map -->
+<Mapbox
+  accessToken={mapboxAccessToken}
+  center={[-96, 37.8]}
+  zoom={3}
+  showCurrentLocation
+  showSearchControl
+/>
+
+<!-- Map with Markers and Popups -->
+<Mapbox
+  accessToken={mapboxAccessToken}
+  center={[-40, 40]}
+  zoom={2}
+  markers={[
+    {
+      lngLat: [-74.006, 40.7128],
+      color: "#FF5733",
+      popup: {
+        content: "<h3>New York City</h3><p>The Big Apple</p>",
+        closeButton: true
+      }
+    }
+  ]}
+/>
+
+<!-- Real-time Updates -->
+<Mapbox
+  bind:this={mapboxRef}
+  accessToken={mapboxAccessToken}
+  center={[-73.99, 40.73]}
+  zoom={13}
+  markers={vehicleMarkers}
+  enableRealTimeUpdates={true}
+  animateMarkerMovement={true}
+  onMarkerUpdate={(markerId, newPosition) => {
+    console.log(`Marker ${markerId} moved to:`, newPosition);
+  }}
+/>
 ```
 
 ## Critical Reminders

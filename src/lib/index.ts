@@ -42,6 +42,7 @@ import TabsList from "./components/tabs/TabsList.svelte";
 import Text from "./components/text/Text.svelte";
 import TextField from "./components/textfield/TextField.svelte";
 import Mapbox from "./components/mapbox/Mapbox.svelte";
+import Slider from "./components/slider/Slider.svelte";
 
 export {
   Button,
@@ -88,4 +89,5 @@ export {
   Text,
   TextField,
   Mapbox,
+  Slider,
 };
