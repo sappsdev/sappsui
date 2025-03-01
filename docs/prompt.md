@@ -33,6 +33,141 @@
 </Flex>
 ```
 
+## Common Responsive Patterns
+
+### Text Alignment
+
+- Consider text alignment across devices: `"text-center md:text-left"`
+- Headers on mobile should typically be centered: `"text-center"`
+
+### Layout Direction
+
+- Use column layout on mobile, row on larger screens: `direction="column md:row"`
+- For side-by-side elements that stack on mobile: `"flex-col md:flex-row"`
+
+### Spacing
+
+- Adjust gaps based on screen size: `"gap-2 md:gap-4 lg:gap-6"`
+- Consider margin/padding adjustments: `"p-4 md:p-6 lg:p-8"`
+
+### Element Sizing
+
+- Adjust widths responsively: `"w-full md:w-1/2 lg:w-1/3"`
+- Button sizes: `"w-full md:w-auto"`
+
+# Design System
+
+## ALready base theme colors
+
+- bg--base100 text-base100-foreground
+
+## Colors
+
+### Primary Colors
+
+- Primary: bg-primary, text-primary
+- Primary Foreground: bg-primary-foreground, text-primary-foreground
+
+### Secondary Colors
+
+- Secondary: bg-secondary, text-secondary
+- Secondary Foreground: bg-secondary-foreground, text-secondary-foreground
+
+### Accent Colors
+
+- Accent: bg-accent, text-accent
+- Accent Foreground: bg-accent-foreground, text-accent-foreground
+
+### Status Colors
+
+- Success: bg-success, text-success-foreground
+- Info: bg-info, text-info-foreground
+- Warning: bg-warning, text-warning-foreground
+- Danger: bg-danger, text-danger-foreground
+
+### Background Colors
+
+- Base: bg-base100
+- Base foreground: text-base100-foreground
+- Base 100: bg-base100
+- Base 100 foreground: text-base100-foreground
+- Base 200: bg-base200
+- Base 200 foreground: text-base200-foreground
+
+### Utility Colors
+
+- Border: border-border
+- Muted: bg-muted, text-muted-foreground
+
+## Component Usage
+
+### Import Statement
+
+Always begin by importing components from the sappsui library:
+
+```svelte
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Code,
+  Color,
+  Dock,
+  DockBody,
+  Flex,
+  Grid,
+  I18n,
+  Icons,
+  Image,
+  Layout,
+  LayoutBody,
+  LayoutMain,
+  Menu,
+  MenuItem,
+  MenuTittle,
+  Navbar,
+  NavbarBody,
+  NavbarBrand,
+  NavbarContent,
+  Page,
+  Provider,
+  Radio,
+  RadioGroup,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  Sidebar,
+  SidebarBody,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarTrigger,
+  Tab,
+  TabContent,
+  Tabs,
+  TabsList,
+  Text,
+  TextField,
+  Mapbox,
+  Slider,
+  Dropzone,
+  Avatar,
+} from 'sappsui';
+```
+
+## Core Principles
+
+- **Always import and use sappsui components** - Never recreate these components
+- **Use Flex or Grid from sappsui** for layout instead of div elements
+- **Always use the Image component from sappsui** for images, never use img tags
+- **Follow the design token system** for consistent styling
+- **Respect parent-child component relationships** (e.g., CardHeader must be inside Card)
+- **Use only props defined by sappsui** - Avoid using props that are not defined by sappsui
+
+## SappsUI Component Reference
+
 ## Layout Component Usage
 
 - Only for +layout.svelte files
@@ -124,117 +259,6 @@ The sidebar component includes a `breakpoint` prop that controls its responsive 
 - Available breakpoints: `"sm"`, `"md"`, `"lg"`, `"xl"`, `"2xl"`
 - Below the breakpoint: Sidebar becomes a drawer
 - Above the breakpoint: Sidebar remains fixed
-
-## Common Responsive Patterns
-
-### Text Alignment
-
-- Consider text alignment across devices: `"text-center md:text-left"`
-- Headers on mobile should typically be centered: `"text-center"`
-
-### Layout Direction
-
-- Use column layout on mobile, row on larger screens: `direction="column md:row"`
-- For side-by-side elements that stack on mobile: `"flex-col md:flex-row"`
-
-### Spacing
-
-- Adjust gaps based on screen size: `"gap-2 md:gap-4 lg:gap-6"`
-- Consider margin/padding adjustments: `"p-4 md:p-6 lg:p-8"`
-
-### Element Sizing
-
-- Adjust widths responsively: `"w-full md:w-1/2 lg:w-1/3"`
-- Button sizes: `"w-full md:w-auto"`
-
-# Design System
-
-## ALready base theme colors
-
-- bg--base100 text-base100-foreground
-
-## Colors
-
-### Primary Colors
-
-- Primary: bg-primary, text-primary
-- Primary Foreground: bg-primary-foreground, text-primary-foreground
-
-### Secondary Colors
-
-- Secondary: bg-secondary, text-secondary
-- Secondary Foreground: bg-secondary-foreground, text-secondary-foreground
-
-### Accent Colors
-
-- Accent: bg-accent, text-accent
-- Accent Foreground: bg-accent-foreground, text-accent-foreground
-
-### Status Colors
-
-- Success: bg-success, text-success-foreground
-- Info: bg-info, text-info-foreground
-- Warning: bg-warning, text-warning-foreground
-- Danger: bg-danger, text-danger-foreground
-
-### Background Colors
-
-- Base: bg-base100
-- Base foreground: text-base100-foreground
-- Base 100: bg-base100
-- Base 100 foreground: text-base100-foreground
-- Base 200: bg-base200
-- Base 200 foreground: text-base200-foreground
-
-### Utility Colors
-
-- Border: border-border
-- Muted: bg-muted, text-muted-foreground
-
-## Component Usage
-
-### Import Statement
-
-Always begin by importing components from the sappsui library:
-
-```svelte
-import {
-  Flex,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Text,
-  I18n,
-  Image,
-  Button,
-  TextField,
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  RadioGroup,
-  Radio,
-  Tabs,
-  TabsList,
-  Tab,
-  TabContent,
-  Icons
-} from 'sappsui';
-```
-
-## Core Principles
-
-- **Always import and use sappsui components** - Never recreate these components
-- **Use Flex or Grid from sappsui** for layout instead of div elements
-- **Always use the Image component from sappsui** for images, never use img tags
-- **Follow the design token system** for consistent styling
-- **Respect parent-child component relationships** (e.g., CardHeader must be inside Card)
-- **Use only props defined by sappsui** - Avoid using props that are not defined by sappsui
-
-## SappsUI Component Reference
-
-### Layout Components
 
 #### Flex (from sappsui)
 
@@ -331,6 +355,78 @@ import {
   **Children:** None
   **Usage:** Always use this component instead of img tags
   **Note:** Add tailwind classes to the Image component to adjust size, aspect ratio and object-fit
+
+## Avatar Component Usage
+
+The Avatar component is a versatile element for displaying user profile images with fallback options. Here's how to implement it effectively:
+
+### Basic Avatar Implementation
+
+```svelte
+<!-- Basic avatar with image -->
+<Avatar src="user-image-url.jpg" name="User Name" />
+
+<!-- Fallback with initials -->
+<Avatar name="John Doe" />
+
+<!-- With icon fallback -->
+<Avatar icon={Icons} />
+```
+
+### Avatar Variants
+
+#### 1. Sizes
+
+```svelte
+<Avatar src="user-image.jpg" size="sm" />
+<Avatar src="user-image.jpg" size="md" />
+<Avatar src="user-image.jpg" size="lg" />
+```
+
+#### 2. Colors
+
+```svelte
+<Avatar name="JD" color="default" />
+<Avatar name="AS" color="primary" />
+<Avatar name="RB" color="secondary" />
+<Avatar name="MC" color="success" />
+<Avatar name="TW" color="warning" />
+<Avatar name="EH" color="danger" />
+```
+
+#### 3. Border Radius
+
+```svelte
+<Avatar src="user-image.jpg" radius="r-none" />
+<Avatar src="user-image.jpg" radius="r-sm" />
+<Avatar src="user-image.jpg" radius="r-md" />
+<Avatar src="user-image.jpg" radius="r-lg" />
+<Avatar src="user-image.jpg" radius="r-xl" />
+<Avatar src="user-image.jpg" radius="r-full" />
+```
+
+#### 4. Bordered and Disabled States
+
+```svelte
+<Avatar src="user-image.jpg" isBordered />
+<Avatar name="BS" color="primary" isBordered />
+<Avatar src="user-image.jpg" isBordered isDisabled />
+```
+
+### Avatar Props
+
+- `src`: URL of the avatar image
+- `name`: Name to display as fallback or for accessibility
+- `color`: Color variant ("default", "primary", "secondary", "success", "warning", "danger")
+- `radius`: Border radius ("r-none", "r-xs", "r-sm", "r-md", "r-lg", "r-xl", "r-full")
+- `size`: Size variant ("sm", "md", "lg")
+- `icon`: Icon component to display as fallback
+- `fallback`: Custom fallback content
+- `isBordered`: Whether to show a border
+- `isDisabled`: Whether the avatar is disabled
+- `isFocusable`: Whether the avatar can receive focus
+- `showFallback`: Force display of fallback content
+- `class`: Additional CSS classes
 
 ### Form Components
 

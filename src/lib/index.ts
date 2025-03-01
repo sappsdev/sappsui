@@ -44,6 +44,7 @@ import TextField from "./components/textfield/TextField.svelte";
 import Mapbox from "./components/mapbox/Mapbox.svelte";
 import Slider from "./components/slider/Slider.svelte";
 import Dropzone from "./components/dropzone/Dropzone.svelte";
+import Avatar from "./components/avatar/Avatar.svelte";
 
 export {
   Button,
@@ -92,4 +93,5 @@ export {
   Mapbox,
   Slider,
   Dropzone,
+  Avatar,
 };

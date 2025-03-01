@@ -1,3 +1,4 @@
+import avatar from "./avatar.js";
 import button from "./button.js";
 import card from "./card.js";
 import content from "./content.js";
@@ -32,5 +33,6 @@ const componentsStyles = {
   ...dropdown,
   ...slider,
   ...dropzone,
+  ...avatar,
 };
 export default componentsStyles;
