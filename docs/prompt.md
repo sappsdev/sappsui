@@ -124,7 +124,7 @@ import {
   RadioGroup,
   Radio,
   Tabs,
-  TabList,
+  TabsList,
   Tab,
   TabContent,
   Icons
@@ -374,12 +374,12 @@ import {
 - `active?: string` (key of the active tab)
 - `placement?: "top" | "bottom" | "start" | "end"` (default "top")
 - `class?: string` (additional tailwind classes)
-  **Children:** TabList | TabContent
-  **Relationships:** Parent for TabList and TabContent
+  **Children:** TabsList | TabContent
+  **Relationships:** Parent for TabsList and TabContent
 
-#### TabList (from sappsui)
+#### TabsList (from sappsui)
 
-**Usage:** `import { TabList } from 'sappsui';`
+**Usage:** `import { TabsList } from 'sappsui';`
 **Props:**
 
 - `size?: "sm" | "md" | "lg"` (default "md")
@@ -397,7 +397,7 @@ import {
 - `key?: string` (key of the tab)
 - `class?: string` (additional tailwind classes)
   **Children:** Icons | Text | I18n | Combination of these
-  **Relationships:** Must be a direct child of TabList
+  **Relationships:** Must be a direct child of TabsList
 
 #### TabContent (from sappsui)
 
@@ -440,7 +440,7 @@ import {
     RadioGroup,
     Radio,
     Tabs,
-    TabList,
+    TabsList,
     Tab,
     TabContent,
     Icons
@@ -507,14 +507,14 @@ import {
 
     <!-- Tabs with proper child hierarchy -->
     <Tabs active={$activeTab}>
-      <TabList>
+      <TabsList>
         <Tab key="tab1">
           <Text>First Tab</Text>
         </Tab>
         <Tab key="tab2">
           <Text>Second Tab</Text>
         </Tab>
-      </TabList>
+      </TabsList>
       <TabContent>
         <!-- Content changes based on active tab -->
         <Text>Tab content here</Text>
@@ -600,6 +600,75 @@ import {
   animateMarkerMovement={true}
   onMarkerUpdate={(markerId, newPosition) => {
     console.log(`Marker ${markerId} moved to:`, newPosition);
+  }}
+/>
+```
+
+### Dropzone (from sappsui)
+
+**Usage:** `import { Dropzone } from 'sappsui';`
+**Props:**
+
+- `class?: string` - Additional CSS classes
+- `label?: string` - Text displayed when no files are selected (default: "Drag and drop files here or click to browse")
+- `info?: string` - Additional information text displayed below the label
+- `error?: string` - Error message to display
+- `variant?: "flat" | "bordered" | "faded" | "underlined"` - Component style variant (default: "bordered")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` - Color theme (default: "primary")
+- `size?: "s-sm" | "s-md" | "s-lg"` - Component size (default: "s-md")
+- `radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"` - Border radius (default: "r-md")
+- `shadow?: "sh-sm" | "sh-md" | "sh-lg" | "sh-xl" | "sh-none"` - Shadow style (default: "sh-sm")
+- `accept?: string` - File types to accept (default: "image/*,application/pdf")
+- `multiple?: boolean` - Allow multiple file selection (default: true)
+- `maxSize?: number` - Maximum file size in bytes (default: 10MB)
+- `maxFiles?: number` - Maximum number of files allowed (default: 5)
+- `disabled?: boolean` - Disable the dropzone (default: false)
+- `uploadToStorage?: boolean` - Automatically upload files to cloud storage (default: false)
+- `storageType?: "r2" | "s3"` - Cloud storage provider (default: "r2")
+- `storageConfig?: object` - Configuration for cloud storage:
+  - `endpoint?: string` - Storage endpoint URL
+  - `region?: string` - Storage region
+  - `bucket?: string` - Storage bucket name
+  - `accessKeyId?: string` - Access key ID
+  - `secretAccessKey?: string` - Secret access key
+
+**Events:**
+
+- `filesSelected` - Fired when files are selected with `{ files }` payload
+- `fileRemoved` - Fired when a file is removed with `{ file, remainingFiles }` payload
+- `uploadStart` - Fired when upload begins with `{ files }` payload
+- `uploadSuccess` - Fired when all uploads complete successfully with `{ files, urls }` payload
+- `uploadPartial` - Fired when some uploads fail with `{ successful, failed }` payload
+- `uploadError` - Fired when upload encounters an error with `{ error }` payload
+
+**Example Usage:**
+
+```svelte
+<!-- Basic Dropzone -->
+<Dropzone />
+
+<!-- Customized Dropzone -->
+<Dropzone
+  label="Upload your documents"
+  info="Max 5MB per file, up to 3 files"
+  variant="bordered"
+  color="primary"
+  maxSize={5 * 1024 * 1024}
+  maxFiles={3}
+  accept="image/*,.pdf,.doc,.docx"
+/>
+
+<!-- With Cloud Storage -->
+<Dropzone
+  label="Upload to Cloud"
+  uploadToStorage={true}
+  storageType="s3"
+  storageConfig={{
+    region: "us-east-1",
+    bucket: "my-uploads"
+  }}
+  on:uploadSuccess={({ detail }) => {
+    console.log("Files uploaded:", detail.urls);
   }}
 />
 ```

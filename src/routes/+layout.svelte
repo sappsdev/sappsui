@@ -170,6 +170,10 @@
           href: "/mapbox",
         },
         {
+          name: "Dropzone",
+          href: "/dropzone",
+        },
+        {
           name: "Charts",
           href: "/charts",
         },

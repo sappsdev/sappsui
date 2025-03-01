@@ -3,6 +3,7 @@ import card from "./card.js";
 import content from "./content.js";
 import dock from "./dock.js";
 import dropdown from "./dropdown.js";
+import dropzone from "./dropzone.js";
 import image from "./image.js";
 import layout from "./layout.js";
 import menu from "./menu.js";
@@ -30,5 +31,6 @@ const componentsStyles = {
   ...textfield,
   ...dropdown,
   ...slider,
+  ...dropzone,
 };
 export default componentsStyles;

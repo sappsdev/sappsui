@@ -43,6 +43,7 @@ import Text from "./components/text/Text.svelte";
 import TextField from "./components/textfield/TextField.svelte";
 import Mapbox from "./components/mapbox/Mapbox.svelte";
 import Slider from "./components/slider/Slider.svelte";
+import Dropzone from "./components/dropzone/Dropzone.svelte";
 
 export {
   Button,
@@ -90,4 +91,5 @@ export {
   TextField,
   Mapbox,
   Slider,
+  Dropzone,
 };
