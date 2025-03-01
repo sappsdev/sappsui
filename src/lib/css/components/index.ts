@@ -10,7 +10,6 @@ import navbar from "./navbar.js";
 import page from "./page.js";
 import radio from "./radio.js";
 import sidebar from "./sidebar.js";
-import steps from "./steps.js";
 import tabs from "./tabs.js";
 import textfield from "./textfield.js";
 
@@ -29,6 +28,5 @@ const componentsStyles = {
   ...image,
   ...textfield,
   ...dropdown,
-  ...steps,
 };
 export default componentsStyles;

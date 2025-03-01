@@ -368,24 +368,27 @@ import {
     Icons
   } from 'sappsui';
   
-  // Form state with runes
-  const username = $state('');
-  const selection = $state('');
-  const radioValue = $state('');
-  const activeTab = $state('tab1');
+  let username = $state('');
+  let selection = $state('');
+  let radioValue = $state('');
+  let activeTab = $state('tab1');
+
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
+  }
 </script>
 
-<form>
+<form onsubmit={handleSubmit}>
   <Flex direction="column" class="gap-4">
     <!-- TextField component with input child -->
     <TextField label="Username" variant="bordered" color="primary">
-      <input type="text" bind:value={$username} />
+      <input type="text" bind:value={username} />
     </TextField>
     
     <!-- Select with proper child hierarchy -->
-    <Select bind:value={$selection}>
+    <Select bind:value={selection}>
       <SelectTrigger label="Options">
-        <Text>{$selection || "Choose an option"}</Text>
+        <Text>{selection || "Choose an option"}</Text>
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="option1">

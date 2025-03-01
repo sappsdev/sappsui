@@ -17,7 +17,7 @@
     src,
     alt,
     radius = "r-md",
-    shadow = "sh-md",
+    shadow,
     isBlurred,
     isZoomed,
     loading = "lazy",
