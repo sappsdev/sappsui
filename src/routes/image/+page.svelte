@@ -14,7 +14,7 @@
       <CardBody class="flex-row gap-4 flex-wrap">
         <Image
           class="w-[300px] h-[200px]"
-          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe"
+          src="https://i.pravatar.cc/300"
           alt="Colorful portrait with headphones"
         />
       </CardBody>
