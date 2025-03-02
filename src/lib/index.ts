@@ -53,6 +53,7 @@ import TableHeader from "./components/table/TableHeader.svelte";
 import TableRow from "./components/table/TableRow.svelte";
 import Badge from "./components/badge/Badge.svelte";
 import Toggle from "./components/toggle/Toggle.svelte";
+import Checkbox from "./components/checkbox/Checkbox.svelte";
 
 export {
   Button,
@@ -110,4 +111,5 @@ export {
   TableRow,
   Badge,
   Toggle,
+  Checkbox,
 };

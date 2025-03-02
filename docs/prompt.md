@@ -165,6 +165,8 @@ import {
   TableHeader,
   TableRow,
   Badge,
+  Toggle,
+  Checkbox,
 } from 'sappsui';
 ```
 
@@ -564,6 +566,38 @@ The Avatar component is a versatile element for displaying user profile images w
   </Toggle>
   ```
 
+#### Checkbox (from sappsui)
+
+**Usage:** `import { Checkbox } from'sappsui';`
+**Props:**
+
+- `checked?: boolean` (bindable value for the checkbox state)
+- `onchange?: (checked: boolean) => void` (event handler for value change)
+- `disabled?: boolean` (whether the checkbox is disabled)
+- `class?: string` (additional tailwind classes)
+- `size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"` (default "r-md")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+  **Children:** Text content for checkbox label
+  **Usage:** Use for boolean input fields that can be toggled on/off
+
+````svelte
+<!-- Basic checkbox -->
+<Checkbox checked={isChecked} onchange={(val) => isChecked = val}>
+  Check me
+</Checkbox>
+<!-- Styled checkbox with icons -->
+<Checkbox
+  color="primary"
+  size="s-md"
+  radius="r-full"
+  bind:checked={isDarkMode}
+  onchange={(val) => isDarkMode = val}
+>
+  Dark Mode
+</Checkbox>
+
+
 #### Slider (from sappsui)
 
 **Usage:** `import { Slider } from 'sappsui';`
@@ -844,7 +878,7 @@ The Avatar component is a versatile element for displaying user profile images w
   >
     Dark Mode
   </Toggle>
-  ```
+````
 
 #### Slider (from sappsui)
 

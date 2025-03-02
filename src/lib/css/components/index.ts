@@ -2,6 +2,7 @@ import avatar from "./avatar.js";
 import badge from "./badge.js";
 import button from "./button.js";
 import card from "./card.js";
+import checkbox from "./checkbox.js";
 import content from "./content.js";
 import dock from "./dock.js";
 import dropdown from "./dropdown.js";
@@ -40,5 +41,6 @@ const componentsStyles = {
   ...table,
   ...badge,
   ...toggle,
+  ...checkbox,
 };
 export default componentsStyles;
