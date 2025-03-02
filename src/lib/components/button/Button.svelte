@@ -7,6 +7,7 @@
     disabled?: boolean;
     type?: "submit" | "reset" | "button";
     onclick?: () => void;
+    href?: string;
     class?: string;
     size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl";
     radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
@@ -31,6 +32,7 @@
   const {
     children,
     onclick,
+    href,
     variant = "solid",
     size = "s-md",
     radius = "r-md",
@@ -41,6 +43,17 @@
   }: Props = $props();
 </script>
 
-<button onclick={onclick} {type} {disabled} class={cn("btn", variant, size, radius, color, className)}>
-  {@render children?.()}
-</button>
+{#if href}
+  <a {href} class={cn("btn", variant, size, radius, color, className)}>
+    {@render children?.()}
+  </a>
+{:else}
+  <button
+    {onclick}
+    {type}
+    {disabled}
+    class={cn("btn", variant, size, radius, color, className)}
+  >
+    {@render children?.()}
+  </button>
+{/if}

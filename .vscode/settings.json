@@ -1,6 +1,7 @@
 {
-    "i18n-ally.localesPaths": [
-        "src/i18n",
-        "src/i18n/locales"
-    ]
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
+  },
+  "i18n-ally.localesPaths": ["src/i18n", "src/i18n/locales"]
 }

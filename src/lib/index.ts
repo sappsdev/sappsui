@@ -54,6 +54,7 @@ import TableRow from "./components/table/TableRow.svelte";
 import Badge from "./components/badge/Badge.svelte";
 import Toggle from "./components/toggle/Toggle.svelte";
 import Checkbox from "./components/checkbox/Checkbox.svelte";
+import Form from "./components/form/Form.svelte";
 
 export {
   Button,
@@ -112,4 +113,5 @@ export {
   Badge,
   Toggle,
   Checkbox,
+  Form,
 };

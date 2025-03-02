@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from "$lib/utils/index.js";
-  import { getContext, type Snippet, onMount } from "svelte";
+  import { getContext, type Snippet } from "svelte";
 
   type Props = {
     children?: Snippet;
