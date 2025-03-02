@@ -25,6 +25,10 @@
 
 ### ❌ DON'T: Place elements side-by-side by default
 
+### ❌ DON'T: Svelte transitions only with tailwind on class prop
+
+### ❌ DON'T: add id prop on any components
+
 ```svelte
 <!-- This will be side-by-side on all screens including mobile -->
 <Flex direction="row" class="gap-4">
@@ -53,7 +57,7 @@
 ### Element Sizing
 
 - Adjust widths responsively: `"w-full md:w-1/2 lg:w-1/3"`
-- Button sizes: `"w-full md:w-auto"`
+- Button sizes: `"s-xs" | "s-sm" | "s-md" | "s-lg"`
 
 # Design System
 
@@ -154,6 +158,13 @@ import {
   Slider,
   Dropzone,
   Avatar,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+  Badge,
 } from 'sappsui';
 ```
 
@@ -454,6 +465,7 @@ The Avatar component is a versatile element for displaying user profile images w
 
 - `class?: string` (additional tailwind classes)
 - `bind:value?: any` (initial selected value)
+- `onchange?: (value: any) => void` (event handler for value change)
   **Children:** SelectTrigger | SelectContent
   **Relationships:** Parent for SelectTrigger and SelectContent
 
@@ -500,6 +512,7 @@ The Avatar component is a versatile element for displaying user profile images w
 
 - `class?: string` (additional tailwind classes)
 - `bind:value?: any` (initial selected value)
+- `onchange?: (value: any) => void` (event handler for value change)
   **Children:** Radio components
   **Relationships:** Parent for Radio components
 
@@ -512,6 +525,44 @@ The Avatar component is a versatile element for displaying user profile images w
 - `value: any` (required: value of the item)
   **Children:** Icons | Text | I18n | Combination of these
   **Relationships:** Must be a direct child of RadioGroup
+
+#### Toggle (from sappsui)
+
+**Usage:** `import { Toggle } from 'sappsui';`
+**Props:**
+
+- `checked?: boolean` (bindable value for the toggle state)
+- `onchange?: (checked: boolean) => void` (event handler for value change)
+- `disabled?: boolean` (whether the toggle is disabled)
+- `class?: string` (additional tailwind classes)
+- `size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"` (default "r-md")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+- `iconOn?: string` (icon to show when toggle is on)
+- `iconOff?: string` (icon to show when toggle is off)
+  **Children:** Text content for toggle label
+  **Usage:** Use for boolean input fields that can be toggled on/off
+  **Example:**
+
+  ```svelte
+  <!-- Basic toggle -->
+  <Toggle checked={isEnabled} onchange={(val) => isEnabled = val}>
+    Enable Feature
+  </Toggle>
+
+  <!-- Styled toggle with icons -->
+  <Toggle
+    color="primary"
+    size="s-md"
+    radius="r-full"
+    iconOn="ph:sun-bold"
+    iconOff="ph:moon-bold"
+    bind:checked={isDarkMode}
+    onchange={(val) => isDarkMode = val}
+  >
+    Dark Mode
+  </Toggle>
+  ```
 
 #### Slider (from sappsui)
 
@@ -561,7 +612,6 @@ The Avatar component is a versatile element for displaying user profile images w
 
 - `active?: string` (key of the active tab)
 - `placement?: "top" | "bottom" | "start" | "end"` (default "top")
-- `class?: string` (additional tailwind classes)
   **Children:** TabsList | TabContent
   **Relationships:** Parent for TabsList and TabContent
 
@@ -574,7 +624,6 @@ The Avatar component is a versatile element for displaying user profile images w
 - `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
 - `size?: "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
 - `color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"`
-- `class?: string` (additional tailwind classes)
   **Children:** Tab components
   **Relationships:** Must be a direct child of Tabs
 
@@ -755,9 +804,47 @@ The Avatar component is a versatile element for displaying user profile images w
 **Props:**
 
 - `class?: string` (additional tailwind classes)
-- `value: any` (required: value of the item)
+- `bind:value: any` (required: bindable value for the radio)
   **Children:** Icons | Text | I18n | Combination of these
   **Relationships:** Must be a direct child of RadioGroup
+
+#### Toggle (from sappsui)
+
+**Usage:** `import { Toggle } from 'sappsui';`
+**Props:**
+
+- `checked?: boolean` (whether the toggle is checked)
+- `onchange?: (checked: boolean) => void` (event handler for value change)
+- `disabled?: boolean` (whether the toggle is disabled)
+- `class?: string` (additional tailwind classes)
+- `size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"` (default "r-md")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+- `iconOn?: string` (icon to show when toggle is on)
+- `iconOff?: string` (icon to show when toggle is off)
+  **Children:** Text content for toggle label
+  **Usage:** Use for boolean input fields that can be toggled on/off
+  **Example:**
+
+  ```svelte
+  <!-- Basic toggle -->
+  <Toggle checked={isEnabled} onchange={(val) => isEnabled = val}>
+    Enable Feature
+  </Toggle>
+
+  <!-- Styled toggle with icons -->
+  <Toggle
+    color="primary"
+    size="s-md"
+    radius="r-full"
+    iconOn="ph:sun-bold"
+    iconOff="ph:moon-bold"
+    checked={isDarkMode}
+    onchange={(val) => isDarkMode = val}
+  >
+    Dark Mode
+  </Toggle>
+  ```
 
 #### Slider (from sappsui)
 

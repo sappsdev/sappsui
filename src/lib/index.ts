@@ -52,6 +52,7 @@ import TableColumn from "./components/table/TableColumn.svelte";
 import TableHeader from "./components/table/TableHeader.svelte";
 import TableRow from "./components/table/TableRow.svelte";
 import Badge from "./components/badge/Badge.svelte";
+import Toggle from "./components/toggle/Toggle.svelte";
 
 export {
   Button,
@@ -108,4 +109,5 @@ export {
   TableHeader,
   TableRow,
   Badge,
+  Toggle,
 };

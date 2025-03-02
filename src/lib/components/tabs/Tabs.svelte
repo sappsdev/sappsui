@@ -5,16 +5,10 @@
 
   type Props = {
     children?: Snippet;
-    class?: string;
     active?: string;
     placement?: "top" | "bottom" | "start" | "end";
   };
-  const {
-    children,
-    class: className,
-    active,
-    placement = "top",
-  }: Props = $props();
+  const { children, active, placement = "top" }: Props = $props();
   let tabs = $state({
     active: active || null,
     placement,
@@ -23,6 +17,6 @@
   setContext("tabs", tabs);
 </script>
 
-<div class={cn("tabs", placement, className)}>
+<div class={cn("tabs", placement)}>
   {@render children?.()}
 </div>

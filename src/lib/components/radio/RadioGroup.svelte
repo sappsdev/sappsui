@@ -7,6 +7,7 @@
     class?: string;
     vertical?: boolean;
     value?: string | number | null;
+    onchange?: (value: any) => void;
     size?: "s-sm" | "s-md" | "s-lg";
     color?:
       | "muted"
@@ -23,6 +24,7 @@
     class: className,
     vertical,
     value = $bindable(),
+    onchange,
     size,
     color = "muted",
   }: Props = $props();
@@ -35,6 +37,7 @@
   $effect(() => {
     if (radio.selected) {
       value = radio.selected;
+      onchange?.(radio.selected);
     }
   });
 </script>

@@ -107,12 +107,12 @@
           href: "/radio",
         },
         {
-          name: "Switch",
-          href: "/switch",
-        },
-        {
           name: "Slider",
           href: "/slider",
+        },
+        {
+          name: "Toggle",
+          href: "/toggle",
         },
       ],
     },

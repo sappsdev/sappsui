@@ -4,7 +4,6 @@
 
   type Props = {
     children?: Snippet;
-    class?: string;
     size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl";
     variant?: "solid" | "bordered" | "light" | "underlined";
     radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
@@ -19,7 +18,6 @@
   };
   const {
     children,
-    class: className,
     size = "s-md",
     variant = "solid",
     radius = "r-md",
@@ -75,15 +73,7 @@
 <div class="tabs-wrapper">
   <div
     bind:this={listRef}
-    class={cn(
-      "tabs-list group",
-      tabs?.placement,
-      size,
-      variant,
-      radius,
-      color,
-      className
-    )}
+    class={cn("tabs-list group", tabs?.placement, size, variant, radius, color)}
   >
     {@render children?.()}
     <div

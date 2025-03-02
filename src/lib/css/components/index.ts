@@ -17,6 +17,7 @@ import slider from "./slider.js";
 import table from "./table.js";
 import tabs from "./tabs.js";
 import textfield from "./textfield.js";
+import toggle from "./toggle.js";
 
 const componentsStyles = {
   ...layout,
@@ -38,5 +39,6 @@ const componentsStyles = {
   ...avatar,
   ...table,
   ...badge,
+  ...toggle,
 };
 export default componentsStyles;

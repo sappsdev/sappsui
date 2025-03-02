@@ -1,6 +1,8 @@
 <script lang="ts">
   import { cn } from "$lib/utils/index.js";
   import type { Snippet } from "svelte";
+  import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
+  import Tab from "../tabs/Tab.svelte";
 
   type Props = {
     children?: Snippet;

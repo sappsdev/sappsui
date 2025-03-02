@@ -14,5 +14,9 @@
 
 <label class={cn("radio-item", className)}>
   <input type="radio" {value} bind:group={radio.selected} class="radio-input" />
-  {@render children?.()}
+  {#if children}
+    <div class="label">
+      {@render children?.()}
+    </div>
+  {/if}
 </label>

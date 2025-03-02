@@ -6,15 +6,13 @@
   type Props = {
     children?: Snippet;
     value?: string | number | null | undefined | unknown;
+    onchange?: (value: any) => void;
   };
-  let {
-    children,
-    value = $bindable(),
-  }: Props = $props();
+  let { children, value = $bindable(), onchange }: Props = $props();
 
   let select = $state({
     selected: value || null,
-    isOpen: false
+    isOpen: false,
   });
 
   setContext("select", select);
@@ -22,6 +20,7 @@
   $effect(() => {
     if (select.selected !== value) {
       value = select.selected;
+      onchange?.(select.selected);
     }
   });
 </script>
