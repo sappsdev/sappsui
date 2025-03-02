@@ -11,7 +11,7 @@
     Text,
     SidebarBody,
     Sidebar,
-    MenuTittle,
+    MenuTitle,
     LayoutMain,
     NavbarContent,
   } from "$lib/index.js";
@@ -206,7 +206,7 @@
       <SidebarBody>
         <Menu vertical>
           {#each menu as list}
-            <MenuTittle>{list.title}</MenuTittle>
+            <MenuTitle>{list.title}</MenuTitle>
             {#each list.items as item}
               <MenuItem href={item.href}>{item.name}</MenuItem>
             {/each}

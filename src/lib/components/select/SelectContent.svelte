@@ -15,7 +15,7 @@
   <div
     transition:slide={{ duration: 150 }}
     use:popoverPosition
-    class={cn("dropdown-content")}
+    class={cn("dropdown-content menu-root overflow-y-auto")}
   >
     {@render children?.()}
   </div>

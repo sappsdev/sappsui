@@ -27,9 +27,15 @@
   };
 </script>
 
-<button onclick={handleClick}  class={cn("menu-item", className)}>
+<button
+  onclick={handleClick}
+  class:active={select.selected === value}
+  class={cn("menu-item s-md r-md", className)}
+>
   {@render children?.()}
   {#if select.selected === value}
-    <span class={cn("menu-item-indicator")}><Icons icon="solar:check-read-linear" /> </span>
+    <span class={cn("menu-item-indicator")}
+      ><Icons icon="solar:check-read-linear" />
+    </span>
   {/if}
 </button>

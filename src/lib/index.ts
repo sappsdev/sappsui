@@ -17,7 +17,7 @@ import LayoutBody from "./components/layout/LayoutBody.svelte";
 import LayoutMain from "./components/layout/LayoutMain.svelte";
 import Menu from "./components/menu/Menu.svelte";
 import MenuItem from "./components/menu/MenuItem.svelte";
-import MenuTittle from "./components/menu/MenuTittle.svelte";
+import MenuTitle from "./components/menu/MenuTitle.svelte";
 import Navbar from "./components/navbar/Navbar.svelte";
 import NavbarBody from "./components/navbar/NavbarBody.svelte";
 import NavbarBrand from "./components/navbar/NavbarBrand.svelte";
@@ -55,18 +55,22 @@ import Badge from "./components/badge/Badge.svelte";
 import Toggle from "./components/toggle/Toggle.svelte";
 import Checkbox from "./components/checkbox/Checkbox.svelte";
 import Form from "./components/form/Form.svelte";
+import MenuCollapse from "./components/menu/MenuCollapse.svelte";
 
 export {
+  Badge,
   Button,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
+  Checkbox,
   Code,
   Color,
   Dock,
   DockBody,
   Flex,
+  Form,
   Grid,
   I18n,
   Icons,
@@ -76,7 +80,8 @@ export {
   LayoutMain,
   Menu,
   MenuItem,
-  MenuTittle,
+  MenuTitle,
+  MenuCollapse,
   Navbar,
   NavbarBody,
   NavbarBrand,
@@ -110,8 +115,5 @@ export {
   TableColumn,
   TableHeader,
   TableRow,
-  Badge,
   Toggle,
-  Checkbox,
-  Form,
 };
