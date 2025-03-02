@@ -1,4 +1,5 @@
 import avatar from "./avatar.js";
+import badge from "./badge.js";
 import button from "./button.js";
 import card from "./card.js";
 import content from "./content.js";
@@ -13,6 +14,7 @@ import page from "./page.js";
 import radio from "./radio.js";
 import sidebar from "./sidebar.js";
 import slider from "./slider.js";
+import table from "./table.js";
 import tabs from "./tabs.js";
 import textfield from "./textfield.js";
 
@@ -34,5 +36,7 @@ const componentsStyles = {
   ...slider,
   ...dropzone,
   ...avatar,
+  ...table,
+  ...badge,
 };
 export default componentsStyles;

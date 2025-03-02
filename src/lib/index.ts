@@ -45,6 +45,13 @@ import Mapbox from "./components/mapbox/Mapbox.svelte";
 import Slider from "./components/slider/Slider.svelte";
 import Dropzone from "./components/dropzone/Dropzone.svelte";
 import Avatar from "./components/avatar/Avatar.svelte";
+import Table from "./components/table/Table.svelte";
+import TableBody from "./components/table/TableBody.svelte";
+import TableCell from "./components/table/TableCell.svelte";
+import TableColumn from "./components/table/TableColumn.svelte";
+import TableHeader from "./components/table/TableHeader.svelte";
+import TableRow from "./components/table/TableRow.svelte";
+import Badge from "./components/badge/Badge.svelte";
 
 export {
   Button,
@@ -94,4 +101,11 @@ export {
   Slider,
   Dropzone,
   Avatar,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+  Badge,
 };

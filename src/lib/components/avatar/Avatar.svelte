@@ -12,7 +12,7 @@
       | "warning"
       | "danger";
     radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
-    size?: "sm" | "md" | "lg";
+    size?: "s-sm" | "s-md" | "s-lg";
     name?: string;
     icon?: any;
     fallback?: any;
@@ -27,7 +27,7 @@
     src,
     color = "default",
     radius = "r-full",
-    size = "md",
+    size = "s-md",
     name,
     icon,
     fallback,

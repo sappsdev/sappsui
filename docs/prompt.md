@@ -378,9 +378,9 @@ The Avatar component is a versatile element for displaying user profile images w
 #### 1. Sizes
 
 ```svelte
-<Avatar src="user-image.jpg" size="sm" />
-<Avatar src="user-image.jpg" size="md" />
-<Avatar src="user-image.jpg" size="lg" />
+<Avatar src="user-image.jpg" size="s-sm" />
+<Avatar src="user-image.jpg" size="s-md" />
+<Avatar src="user-image.jpg" size="s-lg" />
 ```
 
 #### 2. Colors
@@ -419,7 +419,7 @@ The Avatar component is a versatile element for displaying user profile images w
 - `name`: Name to display as fallback or for accessibility
 - `color`: Color variant ("default", "primary", "secondary", "success", "warning", "danger")
 - `radius`: Border radius ("r-none", "r-xs", "r-sm", "r-md", "r-lg", "r-xl", "r-full")
-- `size`: Size variant ("sm", "md", "lg")
+- `size`: Size variant ("s-sm", "s-md", "s-lg")
 - `icon`: Icon component to display as fallback
 - `fallback`: Custom fallback content
 - `isBordered`: Whether to show a border
@@ -427,6 +427,252 @@ The Avatar component is a versatile element for displaying user profile images w
 - `isFocusable`: Whether the avatar can receive focus
 - `showFallback`: Force display of fallback content
 - `class`: Additional CSS classes
+
+### Form Components
+
+#### TextField (from sappsui)
+
+**Usage:** `import { TextField } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `label?: string` (label of the input)
+- `info?: string` (info text for the input)
+- `error?: string` (error message)
+- `variant?: "flat" | "bordered" | "faded" | "underlined"` (default "flat")
+- `labelPlacement?: "inside" | "outside" | "outside-left"` (default "inside")
+- `size?: "s-sm" | "s-md" | "s-lg"` (default "s-md")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "muted")
+  **Children:** input | textarea element with bind:value
+  **Usage:** Must be wrapped in a form element
+
+#### Select (from sappsui)
+
+**Usage:** `import { Select } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `bind:value?: any` (initial selected value)
+  **Children:** SelectTrigger | SelectContent
+  **Relationships:** Parent for SelectTrigger and SelectContent
+
+#### SelectTrigger (from sappsui)
+
+**Usage:** `import { SelectTrigger } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `label?: string` (label of the input)
+- `info?: string` (info text for the input)
+- `error?: string` (error message)
+- `variant?: "flat" | "bordered" | "faded" | "underlined"` (default "flat")
+- `labelPlacement?: "inside" | "outside" | "outside-left"` (default "inside")
+- `size?: "s-sm" | "s-md" | "s-lg"` (default "s-md")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "muted")
+  **Children:** Icons | Text | I18n | Combination of these
+  **Relationships:** Must be a direct child of Select
+
+#### SelectContent (from sappsui)
+
+**Usage:** `import { SelectContent } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** SelectItem components
+  **Relationships:** Must be a direct child of Select
+
+#### SelectItem (from sappsui)
+
+**Usage:** `import { SelectItem } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `value: any` (required: value of the item)
+  **Children:** Icons | Text | I18n | Combination of these
+  **Relationships:** Must be a direct child of SelectContent
+
+#### RadioGroup (from sappsui)
+
+**Usage:** `import { RadioGroup } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `bind:value?: any` (initial selected value)
+  **Children:** Radio components
+  **Relationships:** Parent for Radio components
+
+#### Radio (from sappsui)
+
+**Usage:** `import { Radio } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `value: any` (required: value of the item)
+  **Children:** Icons | Text | I18n | Combination of these
+  **Relationships:** Must be a direct child of RadioGroup
+
+#### Slider (from sappsui)
+
+**Usage:** `import { Slider } from 'sappsui';`
+**Props:**
+
+- `value?: number` (for single value slider mode)
+- `minValue?: number` (for range slider mode, default 0)
+- `maxValue?: number` (for range slider mode, default 100)
+- `min?: number` (minimum possible value, default 0)
+- `max?: number` (maximum possible value, default 100)
+- `step?: number` (step increment, default 1)
+- `label?: string` (label text for the slider)
+- `hideValue?: boolean` (hide the value display)
+- `hideThumb?: boolean` (hide the thumb element)
+- `showMarks?: boolean` (show step marks on the track)
+- `size?: "sm" | "md" | "lg"` (default "md")
+- `radius?: "none" | "sm" | "md" | "lg" | "full"` (default "full")
+- `color?: "foreground" | "primary" | "secondary" | "success" | "warning" | "danger"` (default "primary")
+- `disabled?: boolean` (whether the slider is disabled)
+- `class?: string` (additional tailwind classes)
+  **Children:** None
+  **Usage:** Use for selecting single values or ranges
+  **Note:** Use either `value` for single value mode OR `minValue`/`maxValue` for range mode
+
+### Interactive Components
+
+#### Button (from sappsui)
+
+**Usage:** `import { Button } from 'sappsui';`
+**Props:**
+
+- `variant?: "solid" | "faded" | "bordered" | "light" | "flat" | "ghost" | "shadow"` (default "solid")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `size?: "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `class?: string` (additional tailwind classes)
+- `color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+- `onclick?: (event: MouseEvent) => void` (event handler for click)
+- `disabled?: boolean` (whether the button is disabled)
+  **Children:** Icons | Text | I18n | Combination of these
+  **Usage:** Use for all clickable button actions
+
+#### Tabs (from sappsui)
+
+**Usage:** `import { Tabs } from 'sappsui';`
+**Props:**
+
+- `active?: string` (key of the active tab)
+- `placement?: "top" | "bottom" | "start" | "end"` (default "top")
+- `class?: string` (additional tailwind classes)
+  **Children:** TabsList | TabContent
+  **Relationships:** Parent for TabsList and TabContent
+
+#### TabsList (from sappsui)
+
+**Usage:** `import { TabsList } from 'sappsui';`
+**Props:**
+
+- `variant?: "solid" | "underlined" | "bordered" | "light"` (default "solid")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `size?: "s-sm" | "s-md" | "s-lg" | "s-xl"` (default "s-md")
+- `color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"`
+- `class?: string` (additional tailwind classes)
+  **Children:** Tab components
+  **Relationships:** Must be a direct child of Tabs
+
+#### Tab (from sappsui)
+
+**Usage:** `import { Tab } from 'sappsui';`
+**Props:**
+
+- `key?: string` (key of the tab)
+- `class?: string` (additional tailwind classes)
+  **Children:** Icons | Text | I18n | Combination of these
+  **Relationships:** Must be a direct child of TabsList
+
+#### TabContent (from sappsui)
+
+**Usage:** `import { TabContent } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** Any components
+  **Relationships:** Must be a direct child of Tabs
+
+### Data Display Components
+
+#### Table (from sappsui)
+
+**Usage:** `import { Table } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `shadow?: "sh-sm" | "sh-md" | "sh-lg" | "sh-xl" | "sh-none"` (default "sh-md")
+- `striped?: boolean` (default false)
+- `hoverable?: boolean` (default false)
+  **Children:** TableHeader | TableBody
+  **Relationships:** Parent for TableHeader and TableBody components
+
+#### TableHeader (from sappsui)
+
+**Usage:** `import { TableHeader } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** TableColumn
+  **Relationships:** Must be a direct child of Table
+
+#### TableColumn (from sappsui)
+
+**Usage:** `import { TableColumn } from'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** Any components
+  **Relationships:** Must be a direct child of TableHeader
+
+#### TableBody (from sappsui)
+
+**Usage:** `import { TableBody } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** TableRow
+  **Relationships:** Must be a direct child of Table
+
+#### TableRow (from sappsui)
+
+**Usage:** `import { TableRow } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** TableCell
+  **Relationships:** Must be a direct child of TableHeader or TableBody
+
+#### TableCell (from sappsui)
+
+**Usage:** `import { TableCell } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+  **Children:** Any components
+  **Relationships:** Must be a direct child of TableRow
+
+### Status Components
+
+#### Badge (from sappsui)
+
+**Usage:** `import { Badge } from 'sappsui';`
+**Props:**
+
+- `class?: string` (additional tailwind classes)
+- `color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "danger"` (default "primary")
+- `variant?: "solid" | "bordered" | "light"` (default "solid")
+- `size?: "s-sm" | "s-md" | "s-lg"` (default "s-md")
+- `radius?: "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-none" | "r-full"` (default "r-md")
+- `placement?: "start" | "end"` (default "end")
+  **Children:** Icons | Text | I18n | Combination of these
+  **Usage:** Use for status indicators, tags, or labels
 
 ### Form Components
 

@@ -13,7 +13,10 @@
 <Page class="p-4 pb-10 gap-4">
   <Flex direction="column" class="gap-2">
     <Text variant="h2">Avatar</Text>
-    <Text>A versatile avatar component for user profile images and fallback content.</Text>
+    <Text
+      >A versatile avatar component for user profile images and fallback
+      content.</Text
+    >
   </Flex>
 
   <Flex direction="column" class="gap-2">
@@ -31,9 +34,9 @@
     <Text variant="h4">Sizes</Text>
     <Card>
       <CardBody class="flex-row gap-4 flex-wrap items-center">
-        <Avatar src="https://i.pravatar.cc/150?u=2" size="sm" />
-        <Avatar src="https://i.pravatar.cc/150?u=3" size="md" />
-        <Avatar src="https://i.pravatar.cc/150?u=4" size="lg" />
+        <Avatar src="https://i.pravatar.cc/150?u=2" size="s-sm" />
+        <Avatar src="https://i.pravatar.cc/150?u=3" size="s-md" />
+        <Avatar src="https://i.pravatar.cc/150?u=4" size="s-lg" />
       </CardBody>
     </Card>
   </Flex>
@@ -96,16 +99,40 @@
         <Text variant="h5" class="mb-2">Props</Text>
         <ul class="list-disc pl-5 space-y-2">
           <li><code>src?: string</code> - URL of the avatar image</li>
-          <li><code>name?: string</code> - Name to display as fallback or for accessibility</li>
-          <li><code>color?: "default" | "primary" | "secondary" | "success" | "warning" | "danger"</code> - Color variant of the avatar</li>
-          <li><code>radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full"</code> - Border radius of the avatar</li>
+          <li>
+            <code>name?: string</code> - Name to display as fallback or for accessibility
+          </li>
+          <li>
+            <code
+              >color?: "default" | "primary" | "secondary" | "success" |
+              "warning" | "danger"</code
+            > - Color variant of the avatar
+          </li>
+          <li>
+            <code
+              >radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" |
+              "r-full"</code
+            > - Border radius of the avatar
+          </li>
           <li><code>size?: "sm" | "md" | "lg"</code> - Size of the avatar</li>
-          <li><code>icon?: any</code> - Icon component to display as fallback</li>
+          <li>
+            <code>icon?: any</code> - Icon component to display as fallback
+          </li>
           <li><code>fallback?: any</code> - Custom fallback content</li>
-          <li><code>isBordered?: boolean</code> - Whether to show a border around the avatar</li>
-          <li><code>isDisabled?: boolean</code> - Whether the avatar is in a disabled state</li>
-          <li><code>isFocusable?: boolean</code> - Whether the avatar can receive focus</li>
-          <li><code>showFallback?: boolean</code> - Force display of fallback content</li>
+          <li>
+            <code>isBordered?: boolean</code> - Whether to show a border around the
+            avatar
+          </li>
+          <li>
+            <code>isDisabled?: boolean</code> - Whether the avatar is in a disabled
+            state
+          </li>
+          <li>
+            <code>isFocusable?: boolean</code> - Whether the avatar can receive focus
+          </li>
+          <li>
+            <code>showFallback?: boolean</code> - Force display of fallback content
+          </li>
           <li><code>class?: string</code> - Additional CSS classes</li>
         </ul>
       </CardBody>

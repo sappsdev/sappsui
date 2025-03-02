@@ -15,6 +15,6 @@ export default {
   },
 
   ".layout-main": {
-    "@apply flex-1 flex flex-col": {},
+    "@apply flex-1 flex flex-col overflow-hidden overflow-y-auto": {},
   },
 };

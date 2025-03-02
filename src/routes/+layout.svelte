@@ -78,8 +78,8 @@
           href: "/image",
         },
         {
-          name: "Menu",
-          href: "/menu",
+          name: "Table",
+          href: "/table",
         },
         {
           name: "Typography",
@@ -202,7 +202,7 @@
     </NavbarBody>
   </Navbar>
   <LayoutBody class="boxed">
-    <Sidebar breakpoint="md">
+    <Sidebar breakpoint="lg">
       <SidebarBody>
         <Menu vertical>
           {#each menu as list}

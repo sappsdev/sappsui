@@ -4,9 +4,9 @@ export default {
       {},
 
     // Size variants
-    "@apply [.sm]:h-8 [.sm]:w-8 [.sm]:text-xs": {},
-    "@apply [.md]:h-10 [.md]:w-10 [.md]:text-sm": {},
-    "@apply [.lg]:h-14 [.lg]:w-14 [.md]:text-base": {},
+    "@apply [.s-sm]:h-8 [.s-sm]:w-8 [.s-sm]:text-xs": {},
+    "@apply [.s-md]:h-10 [.s-md]:w-10 [.s-md]:text-sm": {},
+    "@apply [.s-lg]:h-14 [.s-lg]:w-14 [.s-md]:text-base": {},
 
     // Radius variants
     "@apply [.r-none]:rounded-none": {},
