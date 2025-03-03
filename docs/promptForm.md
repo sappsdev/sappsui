@@ -60,7 +60,7 @@ showFallback?: boolean;
 # Button Component
 **Usage**: `import { Button } from'sappsui';`
 **Description**: A button is a clickable element that represents an action.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - Use for submit, reset, or button type
 ## Props
@@ -77,7 +77,7 @@ color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "war
 # Checkbox Component
 **Usage**: `import { Checkbox } from'sappsui';`
 **Description**: A checkbox is a control that allows users to select one or more options from a list.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Props
 children?: Snippet;
 checked?: boolean;
@@ -91,7 +91,7 @@ iconChecked?: string;
 iconUnchecked?: string;
 
 # Icons Component
-**Usage**: `import { Icon } from'sappsui';`
+**Usage**: `import { Icons } from'sappsui';`
 **Description**: An icon is a small image that represents an action or a status.
 ## Critical Requirement
 - Use iconify icon names
@@ -117,7 +117,7 @@ color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "war
 # Radio Component
 **Usage**: `import { Radio } from'sappsui';`
 **Description**: A radio button is a control that allows users to select one option from a list.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - value prop for value of form
 - children prop for label of form
@@ -139,7 +139,7 @@ onchange?: (value: any) => void;
 # SelectTrigger Component
 **Usage**: `import { SelectTrigger } from'sappsui';`
 **Description**: A select trigger is a button that opens the select content.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - Use this component for select trigger only
 - Use find on runes state options for label or custom view
@@ -164,7 +164,7 @@ radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
 # SelectItem Component
 **Usage**: `import { SelectItem } from'sappsui';`
 **Description**: A select option
-**Children**: Text | Icon | I18n | avatar
+**Children**: Text | Icons | I18n | avatar
 ## Critical Requirement
 - Use this component for select item only
 - Use find on runes state options for loop on repeated options
@@ -176,7 +176,7 @@ color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "war
 # Slider Component
 **Usage**: `import { Slider } from'sappsui';`
 **Description**: A slider is a control that allows users to select a value from a range.
-**Children**: Text | Icon | I18n as label
+**Children**: Text | Icons | I18n as label
 ## Critical Requirement
 - bind:value | bind:minValue , bind:maxValue for value of form
 ## Props
@@ -199,7 +199,7 @@ color?: "foreground" | "primary" | "secondary" | "success" | "warning" | "danger
 # Toggle Component
 **Usage**: `import { Toggle } from'sappsui';`
 **Description**: A toggle is a control that allows users to switch between two states.
-**Children**: Text | Icon | I18n as label
+**Children**: Text | Icons | I18n as label
 ## Critical Requirement
 - bind:value for value of form
 ## Props

@@ -10,6 +10,7 @@ import dropzone from "./dropzone.js";
 import image from "./image.js";
 import layout from "./layout.js";
 import menu from "./menu.js";
+import modal from "./modal.js";
 import navbar from "./navbar.js";
 import page from "./page.js";
 import radio from "./radio.js";
@@ -42,5 +43,6 @@ const componentsStyles = {
   ...badge,
   ...toggle,
   ...checkbox,
+  ...modal,
 };
 export default componentsStyles;

@@ -56,6 +56,10 @@ import Toggle from "./components/toggle/Toggle.svelte";
 import Checkbox from "./components/checkbox/Checkbox.svelte";
 import Form from "./components/form/Form.svelte";
 import MenuCollapse from "./components/menu/MenuCollapse.svelte";
+import Modal from "./components/modal/Modal.svelte";
+import ModalTrigger from "./components/modal/ModalTrigger.svelte";
+import ModalContent from "./components/modal/ModalContent.svelte";
+import ModalClose from "./components/modal/ModalClose.svelte";
 
 export {
   Badge,
@@ -116,4 +120,8 @@ export {
   TableHeader,
   TableRow,
   Toggle,
+  Modal,
+  ModalTrigger,
+  ModalContent,
+  ModalClose,
 };

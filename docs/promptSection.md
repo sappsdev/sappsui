@@ -80,6 +80,15 @@
 ## Props
 - class: tailwind classes for color, responsive or animation styles
 
+# Code Component
+**Usage**: `import { Code } from 'sappsui';`
+**Description**: The Code component displays formatted and syntax-highlighted code blocks.
+**Children**: None
+## Props
+class?: string;
+code?: string; // The code to display
+lang?: string; // The programming language for syntax highlighting (default: "javascript")
+
 # Flex Component
 **Usage**: `import { Flex } from'sappsui';`
 **Description**: A flex is a container that holds the content of a card.
@@ -123,7 +132,7 @@ showFallback?: boolean;
 # Badge Component
 **Usage**: `import { Badge } from'sappsui';`
 **Description**: A badge is a small label that represents a status or a number.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Props
 class?: string;
 size?: "s-xs" | "s-sm" | "s-md" | "s-lg" | "s-xl";
@@ -133,7 +142,7 @@ color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "war
 # Button Component
 **Usage**: `import { Button } from'sappsui';`
 **Description**: A button is a clickable element that represents an action.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - If href prop is used, use a Link component instead
 ## Props
@@ -160,7 +169,7 @@ key?: string;
 props?: Record<string, unknown>;
 
 # Icons Component
-**Usage**: `import { Icon } from'sappsui';`
+**Usage**: `import { Icons } from'sappsui';`
 **Description**: An icon is a small image that represents an action or a status.
 ## Critical Requirement
 - Use iconify icon names
@@ -182,6 +191,45 @@ isBlurred?: boolean;
 isZoomed?: boolean;
 loading?: "eager" | "lazy";
 srcset?: string;
+
+# Modal Component
+**Usage**: `import { Modal } from 'sappsui';`
+**Description**: A modal is a component that displays content in a layer above the app.
+**Children**: ModalContent | ModalTrigger | ModalClose
+## Props
+class?: string;
+isOpen?: boolean;
+size?: "s-sm" | "s-md" | "s-lg";
+radius?: "r-none" | "r-xs" | "r-sm" | "r-md" | "r-lg" | "r-xl" | "r-full";
+placement?: "center" | "top" | "bottom" | "auto";
+backdrop?: boolean;
+closeOnEsc?: boolean;
+closeOnBackdropClick?: boolean;
+onClose?: () => void;
+
+# ModalContent Component
+**Usage**: `import { ModalContent } from 'sappsui';`
+**Description**: A modal content is a component that represents the content area of a modal.
+**Children**: Any Component
+## Props
+class?: string;
+
+# ModalTrigger Component
+**Usage**: `import { ModalTrigger } from 'sappsui';`
+**Description**: A modal trigger is a component that opens a modal when clicked.
+**Children**: Any Component
+## Props
+class?: string;
+onOpen?: () => void;
+
+# ModalClose Component
+**Usage**: `import { ModalClose } from 'sappsui';`
+**Description**: A modal close is a component that closes a modal when clicked.
+**Children**: Any Component
+## Props
+class?: string;
+onClose?: () => void;
+bind:isOpen?: boolean;
 
 # Table Component
 **Usage**: `import { Table } from'sappsui';`
@@ -218,7 +266,7 @@ class?: string;
 # TableColumn Component
 **Usage**: `import { TableColumn } from'sappsui';`
 **Description**: A table column is a component that represents a table column.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - Use runes state for loop on repeated columns
 # Props
@@ -247,7 +295,7 @@ isSelected?: boolean;
 # TableCell Component
 **Usage**: `import { TableCell } from'sappsui';`
 **Description**: A table cell is a component that represents a table cell.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Props
 class?: string;
 
@@ -274,7 +322,7 @@ color?: "muted" | "primary" | "secondary" | "accent" | "info" | "success" | "war
 # Tab Component
 **Usage**: `import { Tab } from'sappsui';`
 **Description**: A tab is a component that represents a tab.
-**Children**: Text | Icon | I18n
+**Children**: Text | Icons | I18n
 ## Critical Requirement
 - key prop is required and need set on TabContent and optional Tabs active prop
 ## Props

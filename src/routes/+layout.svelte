@@ -14,6 +14,9 @@
     MenuTitle,
     LayoutMain,
     NavbarContent,
+    Icons,
+    Button,
+    SidebarTrigger,
   } from "$lib/index.js";
   import "@fontsource-variable/montserrat";
   import type { Snippet } from "svelte";
@@ -24,6 +27,7 @@
   };
 
   let { children }: Props = $props();
+  let isDarkTheme = $state(false);
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
@@ -35,6 +39,11 @@
       });
     });
   });
+
+  function toggleTheme() {
+    isDarkTheme = !isDarkTheme;
+    document.documentElement.classList.toggle("dark");
+  }
 
   const menu = [
     {
@@ -76,6 +85,10 @@
         {
           name: "Image",
           href: "/image",
+        },
+        {
+          name: "Modal",
+          href: "/modal",
         },
         {
           name: "Table",
@@ -133,14 +146,6 @@
       title: "Layouts",
       items: [
         {
-          name: "Dock",
-          href: "/dock",
-        },
-        {
-          name: "Error",
-          href: "/error",
-        },
-        {
           name: "Layout",
           href: "/layout",
         },
@@ -152,19 +157,11 @@
           name: "Sidebar",
           href: "/sidebar",
         },
-        {
-          name: "Page",
-          href: "/page",
-        },
       ],
     },
     {
       title: "Plugins",
       items: [
-        {
-          name: "Copy",
-          href: "/copy",
-        },
         {
           name: "Mapbox",
           href: "/mapbox",
@@ -172,10 +169,6 @@
         {
           name: "Dropzone",
           href: "/dropzone",
-        },
-        {
-          name: "Charts",
-          href: "/charts",
         },
       ],
     },
@@ -194,17 +187,30 @@
           <Text class="font-light" variant="h3">SappsUI</Text>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent>
-        <Menu>
-          <MenuItem href="/">Docs</MenuItem>
-        </Menu>
+      <NavbarContent class="flex justify-around">
+        <SidebarTrigger class="lg:hidden">
+          <Icons icon="mdi:menu" class="size-6" />
+        </SidebarTrigger>
+        <Button onclick={toggleTheme} variant="ghost" class="p-2">
+          <Icons
+            icon={isDarkTheme ? "mdi:weather-sunny" : "mdi:weather-night"}
+            class="size-5"
+          />
+        </Button>
+        <Button
+          href="https://www.paypal.com/donate/?hosted_button_id=PXSBYPKW9X4FL"
+          variant="ghost"
+          class="p-2"
+        >
+          <Icons icon="mdi:heart" class="size-5 text-danger" />
+        </Button>
       </NavbarContent>
     </NavbarBody>
   </Navbar>
   <LayoutBody class="boxed">
     <Sidebar breakpoint="lg">
-      <SidebarBody>
-        <Menu vertical>
+      <SidebarBody class="py-4">
+        <Menu vertical class="py-4">
           {#each menu as list}
             <MenuTitle>{list.title}</MenuTitle>
             {#each list.items as item}

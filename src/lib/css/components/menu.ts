@@ -72,7 +72,7 @@ export default {
 
   ".menu-item": {
     "@apply flex flex-row flex-nowrap items-center gap-2": {},
-    "@apply w-full cursor-pointer relative": {},
+    "@apply w-full cursor-pointer relative whitespace-nowrap": {},
 
     "@apply text-muted-foreground": {},
     "&:hover": {
