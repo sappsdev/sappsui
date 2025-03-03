@@ -7,9 +7,19 @@ export default {
     "@apply min-w-max font-normal subpixel-antialiased overflow-hidden": {},
     "@apply transition-all duration-200": {},
     "@apply active:scale-[0.97]": {},
+    "@apply cursor-pointer": {},
 
     // Default size (md)
     "@apply px-4 h-10 text-sm gap-2": {},
+
+    "&.is-icon": {
+      "@apply px-0": {},
+      "@apply [.s-xs]:w-8 [.s-xs]:h-8 [.s-xs]:p-0": {},
+      "@apply [.s-sm]:w-9 [.s-sm]:h-9 [.s-sm]:p-0": {},
+      "@apply [.s-md]:w-10 [.s-md]:h-10 [.s-md]:p-0": {},
+      "@apply [.s-lg]:w-12 [.s-lg]:h-12 [.s-lg]:p-0": {},
+      "@apply [.s-xl]:w-14 [.s-xl]:h-14 [.s-xl]:p-0": {},
+    },
 
     // Size variants
     "@apply [.s-xs]:px-3 [.s-xs]:h-8 [.s-xs]:text-xs [.s-xs]:gap-1.5": {},

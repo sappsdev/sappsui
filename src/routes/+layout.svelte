@@ -187,11 +187,11 @@
           <Text class="font-light" variant="h3">SappsUI</Text>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent class="flex justify-around">
+      <NavbarContent>
         <SidebarTrigger class="lg:hidden">
           <Icons icon="mdi:menu" class="size-6" />
         </SidebarTrigger>
-        <Button onclick={toggleTheme} variant="ghost" class="p-2">
+        <Button onclick={toggleTheme} isIcon variant="ghost">
           <Icons
             icon={isDarkTheme ? "mdi:weather-sunny" : "mdi:weather-night"}
             class="size-5"
@@ -200,7 +200,7 @@
         <Button
           href="https://www.paypal.com/donate/?hosted_button_id=PXSBYPKW9X4FL"
           variant="ghost"
-          class="p-2"
+          isIcon
         >
           <Icons icon="mdi:heart" class="size-5 text-danger" />
         </Button>

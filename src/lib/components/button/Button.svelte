@@ -28,6 +28,7 @@
       | "success"
       | "warning"
       | "danger";
+    isIcon?: boolean;
   };
   const {
     children,
@@ -40,11 +41,23 @@
     class: className,
     disabled,
     type = "button",
+    isIcon,
   }: Props = $props();
 </script>
 
 {#if href}
-  <a {href} class={cn("btn", variant, size, radius, color, className)}>
+  <a
+    {href}
+    class={cn(
+      "btn",
+      variant,
+      size,
+      radius,
+      color,
+      isIcon && "is-icon",
+      className
+    )}
+  >
     {@render children?.()}
   </a>
 {:else}
@@ -52,7 +65,15 @@
     {onclick}
     {type}
     {disabled}
-    class={cn("btn", variant, size, radius, color, className)}
+    class={cn(
+      "btn",
+      variant,
+      size,
+      radius,
+      color,
+      isIcon && "is-icon",
+      className
+    )}
   >
     {@render children?.()}
   </button>

@@ -1,38 +1,114 @@
-# sv
+# SappsUI Component Library
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, responsive UI component library for Svelte 5 applications with a focus on consistency and beautiful design.
 
-## Creating a project
+## Overview
 
-If you're seeing this, you've probably already done this step. Congrats!
+SappsUI is a comprehensive design system that provides ready-to-use components to build attractive, consistent interfaces across mobile, tablet, and desktop. Built with Svelte 5 runes, it leverages Tailwind CSS for styling flexibility while maintaining a cohesive design language.
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Installation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install sappsui
+# or
+yarn add sappsui
+# or
+pnpm add sappsui
 ```
 
-## Building
+## Key Features
 
-To create a production version of your app:
+- **Fully Responsive**: All components work perfectly across mobile, tablet, and desktop
+- **Modern Design**: Clean, attractive components with consistent styling
+- **Svelte 5 Runes**: Built using Svelte's latest reactive primitives
+- **Tailwind Integration**: Customize components using Tailwind utility classes
+- **Comprehensive Components**: From simple buttons to complex modal dialogs
+- **Internationalization**: Built-in i18n support
 
-```bash
-npm run build
+## Components
+
+SappsUI includes a wide range of components organized by type:
+
+### Layout Components
+- Card, CardHeader, CardBody, CardFooter
+- Flex
+- Grid
+
+### UI Elements
+- Avatar
+- Badge
+- Button
+- Image
+- Text
+- Code
+- Icons
+- I18n (internationalization)
+
+### Interactive Components
+- Modal, ModalContent, ModalTrigger, ModalClose
+- Table, TableHeader, TableColumn, TableBody, TableRow, TableCell
+- Tabs, TabsList, Tab, TabContent
+
+## Design System
+
+SappsUI implements a consistent design system with:
+
+### Colors
+- **Brand**: primary, secondary, accent, muted
+- **Semantic**: info, success, warning, danger
+- **Background**: base100, base200, base300
+- **Border**: border
+
+### Design Properties
+- **Border Radius**: r-none, r-xs, r-sm, r-md, r-lg, r-xl, r-full
+- **Shadows**: sh-none, sh-sm, sh-md, sh-lg, sh-xl
+- **Sizes**: s-xs, s-sm, s-md, s-lg, s-xl, s-2xl
+
+## Usage
+
+```svelte
+<script>
+  import { Card, CardHeader, CardBody, CardFooter, Button, Text } from 'sappsui';
+  
+  let items = $state([
+    { title: 'Item 1', description: 'Description for item 1' },
+    { title: 'Item 2', description: 'Description for item 2' },
+    { title: 'Item 3', description: 'Description for item 3' },
+  ]);
+</script>
+
+<Card radius="r-md" shadow="sh-md" class="max-w-md">
+  <CardHeader class="p-4">
+    <Text variant="h4">Card Example</Text>
+  </CardHeader>
+  <CardBody class="p-4 grid gap-4">
+    {#each items as item}
+      <div>
+        <Text variant="h5">{item.title}</Text>
+        <Text variant="p" class="text-sm">{item.description}</Text>
+      </div>
+    {/each}
+  </CardBody>
+  <CardFooter class="p-4 flex justify-end gap-2">
+    <Button variant="ghost" color="muted">Cancel</Button>
+    <Button color="primary">Save</Button>
+  </CardFooter>
+</Card>
 ```
 
-You can preview the production build with `npm run preview`.
+## Guidelines
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Component Usage
+
+- Use the appropriate components for their intended purpose
+- Don't use layout components (Flex, Grid) for section purposes
+- Always use existing components from the SappsUI library
+- Follow breakpoint patterns for responsive design
+- Use runes state for looping through repeated content
+
+### Best Practices
+
+- Don't add IDs to components directly
+- Use Tailwind classes for styling instead of custom CSS
+- Don't use CardHeader, CardBody, CardFooter for cards with cover images
+- Follow SappsUI's naming conventions for sizes, radiuses, and shadows

@@ -14,7 +14,7 @@ export default {
     "@apply text-base whitespace-nowrap box-border": {},
   },
   ".navbar-content": {
-    "@apply flex gap-4 h-full flex-row flex-nowrap items-center": {},
+    "@apply flex gap-2 h-full flex-row flex-nowrap items-center": {},
   },
   ".navbar-item": {
     "@apply text-base whitespace-nowrap box-border list-none": {},

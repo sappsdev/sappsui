@@ -15,6 +15,6 @@
   };
 </script>
 
-<button class={cn(className)} onclick={handleClick}>
+<button class={cn("btn", className)} onclick={handleClick}>
   {@render children?.()}
 </button>
